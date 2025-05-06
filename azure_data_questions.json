@@ -1,0 +1,112 @@
+[
+    {
+        "question": "What is Azure Synapse Analytics?",
+        "options": [
+            "A NoSQL database service",
+            "An integrated analytics service",
+            "A blockchain service",
+            "A machine learning framework"
+        ],
+        "correct_answer": "An integrated analytics service",
+        "explanation": "Azure Synapse Analytics is an integrated analytics service that brings together data integration, enterprise data warehousing, and big data analytics."
+    },
+    {
+        "question": "Which Azure service is used for creating real-time analytics on streaming data?",
+        "options": [
+            "Azure Stream Analytics",
+            "Azure Table Storage",
+            "Azure Cosmos DB",
+            "Azure SQL Database"
+        ],
+        "correct_answer": "Azure Stream Analytics",
+        "explanation": "Azure Stream Analytics is a real-time analytics and complex event-processing engine designed to analyze and process high volumes of fast streaming data from multiple sources simultaneously."
+    },
+    {
+        "question": "What is the primary purpose of Azure Databricks?",
+        "options": [
+            "Website hosting",
+            "Data backup and recovery",
+            "Big data analytics and collaboration",
+            "IoT device management"
+        ],
+        "correct_answer": "Big data analytics and collaboration",
+        "explanation": "Azure Databricks is an Apache Spark-based analytics platform optimized for Azure cloud services, designed for big data analytics and collaboration between data scientists, engineers, and business analysts."
+    },
+    {
+        "question": "Which Azure service is a fully managed, serverless data integration service?",
+        "options": [
+            "Azure Data Factory",
+            "Azure DevOps",
+            "Azure Functions",
+            "Azure Logic Apps"
+        ],
+        "correct_answer": "Azure Data Factory",
+        "explanation": "Azure Data Factory is a cloud-based data integration service that allows you to create data-driven workflows for orchestrating and automating data movement and data transformation."
+    },
+    {
+        "question": "What does PolyBase in Azure Synapse Analytics allow you to do?",
+        "options": [
+            "Create multiple databases",
+            "Query data across relational and non-relational sources",
+            "Build 3D models",
+            "Deploy applications to multiple environments"
+        ],
+        "correct_answer": "Query data across relational and non-relational sources",
+        "explanation": "PolyBase allows you to query data stored in external sources like Hadoop, Azure Blob Storage, or Azure Data Lake using T-SQL queries, enabling you to join data between relational and non-relational sources."
+    },
+    {
+        "question": "Which Azure service provides a distributed database with multi-region replication?",
+        "options": [
+            "Azure SQL Database",
+            "Azure Table Storage",
+            "Azure Cosmos DB",
+            "Azure Database for MySQL"
+        ],
+        "correct_answer": "Azure Cosmos DB",
+        "explanation": "Azure Cosmos DB is Microsoft's globally distributed, multi-model database service that offers turnkey global distribution, multiple consistency models, and comprehensive SLAs."
+    },
+    {
+        "question": "What is the primary storage format used in Azure Data Lake Storage Gen2?",
+        "options": [
+            "CSV",
+            "XML",
+            "JSON",
+            "Parquet"
+        ],
+        "correct_answer": "Parquet",
+        "explanation": "While Azure Data Lake Storage Gen2 supports multiple formats, Apache Parquet is the recommended format for analytical workloads due to its columnar storage format that provides efficient compression and better performance."
+    },
+    {
+        "question": "Which Azure service would you use for ETL/ELT processes and data pipeline orchestration?",
+        "options": [
+            "Azure Logic Apps",
+            "Azure Functions",
+            "Azure Data Factory",
+            "Azure Batch"
+        ],
+        "correct_answer": "Azure Data Factory",
+        "explanation": "Azure Data Factory is designed for complex hybrid ETL, ELT, and data integration projects with a code-free UI for intuitive authoring and single-pane-of-glass monitoring and management."
+    },
+    {
+        "question": "What is the difference between OLTP and OLAP systems?",
+        "options": [
+            "OLTP is for data storage, OLAP is for data deletion",
+            "OLTP handles day-to-day transactions, OLAP is for complex analytics",
+            "OLTP is cloud-based, OLAP is on-premises only",
+            "OLTP is for structured data, OLAP is for unstructured data only"
+        ],
+        "correct_answer": "OLTP handles day-to-day transactions, OLAP is for complex analytics",
+        "explanation": "Online Transaction Processing (OLTP) systems manage transaction-oriented applications with high volume of small transactions, while Online Analytical Processing (OLAP) systems are optimized for complex queries to analyze aggregated historical data."
+    },
+    {
+        "question": "Which Azure service would you use for a relational database that automatically scales resources?",
+        "options": [
+            "Azure Table Storage",
+            "Azure Cosmos DB",
+            "Azure SQL Database",
+            "Azure Data Lake"
+        ],
+        "correct_answer": "Azure SQL Database",
+        "explanation": "Azure SQL Database is a fully managed relational database service that provides auto-scaling capabilities, allowing resources to be dynamically adjusted based on workload demands."
+    }
+]

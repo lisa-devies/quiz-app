@@ -1,0 +1,24 @@
+[project]
+name = "practice"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mypy>=1.15.0",
+    "ruff>=0.11.8",
+    "streamlit>=1.45.0",
+]
+[dependency-groups]
+types = [
+    "mypy>=1.15.0",
+    "types-pyyaml>=6.0.12.20241230",
+    "types-requests>=2.32.0.20241016",
+    "types-setuptools>=75.8.0.20250225",
+    "types-ujson>=5.10.0.20240515",
+]
+[tool.mypy]
+strict = true
+ignore_missing_imports = true
+disallow_untyped_decorators = false
+no_implicit_optional=false
