@@ -1,5 +1,60 @@
 [
     {
+        "question": "What is Azure Cosmos DB?",
+        "options": [
+            "A virtual machine service",
+            "A globally distributed NoSQL database service",
+            "An AI model deployment platform",
+            "A data visualization tool"
+        ],
+        "correct_answer": "A globally distributed NoSQL database service",
+        "explanation": "Azure Cosmos DB is a globally distributed, multi-model NoSQL database service designed for high availability and low latency."
+    },
+    {
+        "question": "Which Azure service would you use for real-time data ingestion?",
+        "options": [
+            "Azure Data Factory",
+            "Azure Synapse Analytics",
+            "Azure Stream Analytics",
+            "Azure SQL Database"
+        ],
+        "correct_answer": "Azure Stream Analytics",
+        "explanation": "Azure Stream Analytics is used for real-time data streaming and event processing, ideal for scenarios like IoT and telemetry data."
+    },
+    {
+        "question": "What is the primary purpose of Azure Data Lake Storage?",
+        "options": [
+            "Storing relational data in tables",
+            "Hosting websites",
+            "Storing large-scale structured and unstructured data",
+            "Deploying machine learning models"
+        ],
+        "correct_answer": "Storing large-scale structured and unstructured data",
+        "explanation": "Azure Data Lake Storage is designed for big data analytics and can store both structured and unstructured data efficiently."
+    },
+    {
+        "question": "Which service is best suited for creating ETL pipelines in Azure?",
+        "options": [
+            "Azure Machine Learning",
+            "Azure Data Factory",
+            "Azure Blob Storage",
+            "Azure Kubernetes Service"
+        ],
+        "correct_answer": "Azure Data Factory",
+        "explanation": "Azure Data Factory is a cloud-based ETL (extract, transform, load) service that orchestrates and automates data movement and transformation."
+    },
+    {
+        "question": "What is the primary use of Azure SQL Database?",
+        "options": [
+            "Training machine learning models",
+            "Managing a NoSQL database",
+            "Running relational databases in the cloud",
+            "Building containerized apps"
+        ],
+        "correct_answer": "Running relational databases in the cloud",
+        "explanation": "Azure SQL Database is a fully managed relational database service built on Microsoft SQL Server engine, ideal for cloud-based apps."
+    },
+    {
         "question": "What is Azure Synapse Analytics?",
         "options": [
             "A NoSQL database service",
@@ -108,5 +163,82 @@
         ],
         "correct_answer": "Azure SQL Database",
         "explanation": "Azure SQL Database is a fully managed relational database service that provides auto-scaling capabilities, allowing resources to be dynamically adjusted based on workload demands."
+    },
+    {
+        "question": "What is Azure Data Factory primarily used for?",
+        "options": [
+            "Visualizing data in dashboards",
+            "Storing large amounts of unstructured data",
+            "Creating and scheduling data pipelines",
+            "Training machine learning models"
+        ],
+        "correct_answer": "Creating and scheduling data pipelines",
+        "explanation": "Azure Data Factory is used to create, schedule, and manage data pipelines for ETL and data movement between various data sources."
+    },
+    {
+        "question": "Which service is designed for analyzing real-time streaming data in Azure?",
+        "options": [
+            "Azure Stream Analytics",
+            "Azure Data Factory",
+            "Azure Synapse Analytics",
+            "Azure Blob Storage"
+        ],
+        "correct_answer": "Azure Stream Analytics",
+        "explanation": "Azure Stream Analytics enables real-time analytics on fast-moving data from devices, sensors, and other live data sources."
+    },
+    {
+        "question": "What is the purpose of Azure Synapse Analytics?",
+        "options": [
+            "To manage identity and access",
+            "To build web applications",
+            "To integrate big data and data warehousing",
+            "To provide cloud file storage"
+        ],
+        "correct_answer": "To integrate big data and data warehousing",
+        "explanation": "Azure Synapse Analytics combines big data and data warehousing capabilities, enabling querying of data using both SQL and Spark."
+    },
+    {
+        "question": "Which Azure service would you use to store and analyze large volumes of unstructured data?",
+        "options": [
+            "Azure SQL Database",
+            "Azure Data Lake Storage",
+            "Azure Event Grid",
+            "Azure Logic Apps"
+        ],
+        "correct_answer": "Azure Data Lake Storage",
+        "explanation": "Azure Data Lake Storage is optimized for analytics and is capable of storing massive amounts of unstructured data efficiently."
+    },
+    {
+        "question": "Which service is ideal for relational data workloads in Azure?",
+        "options": [
+            "Azure Cosmos DB",
+            "Azure Blob Storage",
+            "Azure SQL Database",
+            "Azure Event Hubs"
+        ],
+        "correct_answer": "Azure SQL Database",
+        "explanation": "Azure SQL Database is a fully managed relational database service based on SQL Server, ideal for transactional workloads."
+    },
+    {
+        "question": "What does Azure Cosmos DB offer that makes it ideal for globally distributed applications?",
+        "options": [
+            "Built-in machine learning algorithms",
+            "Integrated data visualization tools",
+            "Multi-region replication and low-latency access",
+            "Support for only relational data models"
+        ],
+        "correct_answer": "Multi-region replication and low-latency access",
+        "explanation": "Azure Cosmos DB provides multi-region replication, high availability, and low-latency reads and writes, making it ideal for global applications."
+    },
+    {
+        "question": "What is the main benefit of using Azure Event Hubs?",
+        "options": [
+            "Managing virtual machines",
+            "Storing documents",
+            "Ingesting large amounts of event data in real-time",
+            "Hosting APIs"
+        ],
+        "correct_answer": "Ingesting large amounts of event data in real-time",
+        "explanation": "Azure Event Hubs is a big data streaming platform that can ingest millions of events per second for real-time processing."
     }
 ]
