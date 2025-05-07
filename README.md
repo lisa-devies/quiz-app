@@ -2,7 +2,6 @@
 
 An Streamlit application designed for exam preparation through customizable quizzes.
 
-
 ## Features
 
 - Multiple-choice questions with immediate feedback
@@ -14,7 +13,6 @@ An Streamlit application designed for exam preparation through customizable quiz
 - Default set of Azure Data Fundamentals questions
 - Questions loaded from an external JSON file for easy customization
 
-
 ## Setup Instructions
 
 ### Prerequisites
@@ -25,12 +23,14 @@ An Streamlit application designed for exam preparation through customizable quiz
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/yourusername/quiz-app.git
 cd quiz-app
 ```
 
 2. Create a virtual environment and install dependencies using uv:
+
 ```bash
 uv venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
@@ -38,6 +38,7 @@ uv pip install streamlit
 ```
 
 3. Run the application:
+
 ```bash
 streamlit run app.py
 ```
