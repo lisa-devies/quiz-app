@@ -69,6 +69,7 @@ quiz-app/
 ├── questions.json                # Quiz questions data file
 ├── .gitignore                    # Git ignore file
 ├── justfile                      # Task runner commands for development
+├── pyproject.toml                # Project metadata and dependencies (managed with uv)
 └── README.md                     # This file
 ```
 
