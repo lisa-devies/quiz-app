@@ -15,4 +15,4 @@ ruff-check:
 
 # Run mypy to check for type errors
 mypy:
-    uv run --group types mypy --install-types --non-interactive main.py
+    uv run --group types mypy --install-types --non-interactive app.py

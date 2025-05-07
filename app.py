@@ -4,7 +4,7 @@ import json
 from typing import Any
 
 # Set page configuration
-st.set_page_config(page_title="Exam Quiz Practice", page_icon="📝", layout="centered")
+st.set_page_config(page_title="Exam Quiz quiz-app", page_icon="📝", layout="centered")
 
 # Custom CSS to improve appearance
 st.markdown(
@@ -53,7 +53,7 @@ st.markdown(
 )
 
 
-def load_questions_from_file(file_path: str = "azure_data_questions.json") -> Any:
+def load_questions_from_file(file_path: str = "questions.json") -> Any:
     try:
         with open(file_path, "r") as file:
             return json.load(file)
@@ -87,7 +87,7 @@ def initialize_state() -> None:
 initialize_state()
 
 # App header
-st.title("📝 Exam Quiz Practice")
+st.title("📝 Exam Quiz quiz-app")
 
 # Sidebar for settings and stats
 with st.sidebar:
@@ -117,7 +117,7 @@ with st.sidebar:
         )
 
     # Reset button
-    if st.button("Restart Quiz"):
+    if st.button("Restart Quiz", key="restart_quiz"):
         if st.session_state.shuffle_questions:
             random.shuffle(st.session_state.questions)
         st.session_state.current_question = 0
@@ -147,7 +147,7 @@ if st.session_state.current_question < len(st.session_state.questions):
     # Display options as buttons
     if not st.session_state.answered:
         for option in current_q["options"]:
-            if st.button(option):
+            if st.button(option, key=option):
                 st.session_state.selected_option = option
                 st.session_state.answered = True
                 st.session_state.total_answered += 1
@@ -183,7 +183,7 @@ if st.session_state.current_question < len(st.session_state.questions):
             )
 
         # Next question button
-        if st.button("Next Question"):
+        if st.button("Next Question", key="next_question"):
             st.session_state.current_question += 1
             st.session_state.answered = False
             st.session_state.selected_option = None
@@ -211,7 +211,7 @@ else:
     else:
         st.markdown("#### 💪 Keep practicing! Review the material and try again.")
 
-    if st.button("Restart Quiz"):
+    if st.button("Restart Quiz", key="restart_quiz_final"):
         if st.session_state.shuffle_questions:
             random.shuffle(st.session_state.questions)
         st.session_state.current_question = 0
