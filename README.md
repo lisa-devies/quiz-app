@@ -64,7 +64,7 @@ Questions are stored in `questions.json`. You can modify this file to add your o
 ## Project Structure
 
 ```
-azure-quiz-app/
+quiz-app/
 ├── app.py                        # Main Streamlit application
 ├── questions.json                # Quiz questions data file
 ├── .gitignore                    # Git ignore file
