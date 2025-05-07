@@ -68,7 +68,7 @@ azure-quiz-app/
 ├── app.py                        # Main Streamlit application
 ├── questions.json                # Quiz questions data file
 ├── .gitignore                    # Git ignore file
-├── requirements.txt              # Python dependencies
+├── justfile                      # Task runner commands for development
 └── README.md                     # This file
 ```
 
