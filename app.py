@@ -98,6 +98,134 @@ def create_sidebar() -> None:
             st.rerun()
 
 
+def display_progress_bar() -> None:
+    # Progress bar
+    progress = (st.session_state.current_question) / len(st.session_state.questions)
+    st.progress(progress)
+    st.markdown(
+        f'<p class="progress-text">Question {st.session_state.current_question + 1} of {len(st.session_state.questions)}</p>',
+        unsafe_allow_html=True,
+    )
+
+
+def display_question(question_data: dict[str, str]) -> None:
+    """Display the current question."""
+    st.markdown(
+        f'<div class="question-card"><h3>{question_data["question"]}</h3></div>',
+        unsafe_allow_html=True,
+    )
+
+
+def handle_answer_selection(question_data: dict[str, str]) -> None:
+    """Display answer options as buttons and handle selection."""
+    if not st.session_state.answered:
+        for option in question_data["options"]:
+            if st.button(option, key=option):
+                st.session_state.selected_option = option
+                st.session_state.answered = True
+                st.session_state.total_answered += 1
+
+                if option == question_data["correct_answer"]:
+                    st.session_state.correct_answers += 1
+
+                st.rerun()
+
+
+def show_answer_feedback(question_data: dict[str, str]) -> None:
+    """Show feedback after the user has answered."""
+    is_correct = st.session_state.selected_option == question_data["correct_answer"]
+
+    # Highlight selected option and correct answer
+    for option in question_data["options"]:
+        if option == st.session_state.selected_option:
+            if is_correct:
+                st.success(f"✓ {option}")
+            else:
+                st.error(f"✗ {option}")
+        elif option == question_data["correct_answer"] and not is_correct:
+            st.success(f"✓ {option} (Correct answer)")
+        else:
+            st.write(option)
+
+    # Show explanation
+    if is_correct:
+        st.markdown(
+            f'<div class="feedback-correct"><b>Correct!</b><br>{question_data["explanation"]}</div>',
+            unsafe_allow_html=True,
+        )
+    else:
+        st.markdown(
+            f'<div class="feedback-incorrect"><b>Incorrect.</b> The correct answer is: {question_data["correct_answer"]}<br>{question_data["explanation"]}</div>',
+            unsafe_allow_html=True,
+        )
+
+    # Next question button
+    if st.button("Next Question", key="next_question"):
+        st.session_state.current_question += 1
+        st.session_state.answered = False
+        st.session_state.selected_option = None
+        st.rerun()
+
+
+def restart_quiz() -> None:
+    """Reset quiz to initial state."""
+    if st.session_state.shuffle_questions:
+        random.shuffle(st.session_state.questions)
+    st.session_state.current_question = 0
+    st.session_state.correct_answers = 0
+    st.session_state.total_answered = 0
+    st.session_state.answered = False
+    st.session_state.selected_option = None
+
+
+def show_quiz_completion() -> None:
+    """Display quiz completion screen with score and feedback."""
+    st.success("🎉 Quiz Completed!")
+
+    score_percentage = (
+        st.session_state.correct_answers / len(st.session_state.questions)
+    ) * 100
+    st.markdown(
+        f"### Your Score: {st.session_state.correct_answers}/{len(st.session_state.questions)} ({score_percentage:.1f}%)"
+    )
+
+    # Performance feedback
+    if score_percentage >= 90:
+        st.markdown("#### 🏆 Excellent job! You've mastered this material!")
+    elif score_percentage >= 70:
+        st.markdown(
+            "#### 👍 Good work! You have a solid understanding of the material."
+        )
+    elif score_percentage >= 50:
+        st.markdown("#### 📚 Not bad, but there's room for improvement.")
+    else:
+        st.markdown("#### 💪 Keep practicing! Review the material and try again.")
+
+    if st.button("Restart Quiz", key="restart_quiz_final"):
+        restart_quiz()
+        st.rerun()
+
+
+def show_quiz_interface() -> None:
+    """Display the main quiz interface based on current state."""
+    if st.session_state.current_question < len(st.session_state.questions):
+        display_progress_bar()
+
+        # Get current question
+        current_q = st.session_state.questions[st.session_state.current_question]
+
+        # Display question
+        display_question(current_q)
+
+        # Handle answering or showing feedback
+        if not st.session_state.answered:
+            handle_answer_selection(current_q)
+        else:
+            show_answer_feedback(current_q)
+    else:
+        show_quiz_completion()
+
+
 def main() -> None:
     # Initialize state
     initialize_state()
@@ -108,99 +236,7 @@ def main() -> None:
     # Sidebar
     create_sidebar()
 
-    # Main quiz interface
-    if st.session_state.current_question < len(st.session_state.questions):
-        # Progress bar
-        progress = (st.session_state.current_question) / len(st.session_state.questions)
-        st.progress(progress)
-        st.markdown(
-            f'<p class="progress-text">Question {st.session_state.current_question + 1} of {len(st.session_state.questions)}</p>',
-            unsafe_allow_html=True,
-        )
-
-        current_q = st.session_state.questions[st.session_state.current_question]
-
-        # Display question
-        st.markdown(
-            f'<div class="question-card"><h3>{current_q["question"]}</h3></div>',
-            unsafe_allow_html=True,
-        )
-
-        # Display options as buttons
-        if not st.session_state.answered:
-            for option in current_q["options"]:
-                if st.button(option, key=option):
-                    st.session_state.selected_option = option
-                    st.session_state.answered = True
-                    st.session_state.total_answered += 1
-                    if option == current_q["correct_answer"]:
-                        st.session_state.correct_answers += 1
-                    st.rerun()
-        else:
-            # Show feedback after answering
-            is_correct = st.session_state.selected_option == current_q["correct_answer"]
-
-            # Highlight the selected option
-            for option in current_q["options"]:
-                if option == st.session_state.selected_option:
-                    if is_correct:
-                        st.success(f"✓ {option}")
-                    else:
-                        st.error(f"✗ {option}")
-                elif option == current_q["correct_answer"] and not is_correct:
-                    st.success(f"✓ {option} (Correct answer)")
-                else:
-                    st.write(option)
-
-            # Show explanation
-            if is_correct:
-                st.markdown(
-                    f'<div class="feedback-correct"><b>Correct!</b><br>{current_q["explanation"]}</div>',
-                    unsafe_allow_html=True,
-                )
-            else:
-                st.markdown(
-                    f'<div class="feedback-incorrect"><b>Incorrect.</b> The correct answer is: {current_q["correct_answer"]}<br>{current_q["explanation"]}</div>',
-                    unsafe_allow_html=True,
-                )
-
-            # Next question button
-            if st.button("Next Question", key="next_question"):
-                st.session_state.current_question += 1
-                st.session_state.answered = False
-                st.session_state.selected_option = None
-                st.rerun()
-    else:
-        # Quiz completed
-        st.success("🎉 Quiz Completed!")
-
-        score_percentage = (
-            st.session_state.correct_answers / len(st.session_state.questions)
-        ) * 100
-        st.markdown(
-            f"### Your Score: {st.session_state.correct_answers}/{len(st.session_state.questions)} ({score_percentage:.1f}%)"
-        )
-
-        # Performance feedback
-        if score_percentage >= 90:
-            st.markdown("#### 🏆 Excellent job! You've mastered this material!")
-        elif score_percentage >= 70:
-            st.markdown(
-                "#### 👍 Good work! You have a solid understanding of the material."
-            )
-        elif score_percentage >= 50:
-            st.markdown("#### 📚 Not bad, but there's room for improvement.")
-        else:
-            st.markdown("#### 💪 Keep practicing! Review the material and try again.")
-
-        if st.button("Restart Quiz", key="restart_quiz_final"):
-            if st.session_state.shuffle_questions:
-                random.shuffle(st.session_state.questions)
-            st.session_state.current_question = 0
-            st.session_state.correct_answers = 0
-            st.session_state.total_answered = 0
-            st.session_state.answered = False
-            st.rerun()
+    show_quiz_interface()
 
 
 if __name__ == "__main__":
