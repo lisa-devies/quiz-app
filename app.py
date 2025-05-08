@@ -209,15 +209,15 @@ def show_quiz_completion() -> None:
 
     # Performance feedback
     if score_percentage >= 90:
-        st.markdown("#### 🏆 Excellent job! You've mastered this material!")
+        st.markdown("#### 🥹 Excellent job! You really know this 🌟")
     elif score_percentage >= 70:
         st.markdown(
-            "#### 👍 Good work! You have a solid understanding of the material."
+            "#### 🥰 Good work! You know this pretty well."
         )
     elif score_percentage >= 50:
-        st.markdown("#### 📚 Not bad, but there's room for improvement.")
+        st.markdown("#### 🤭 Not bad, but there's room for improvement")
     else:
-        st.markdown("#### 💪 Keep practicing! Review the material and try again.")
+        st.markdown("#### 🫣 Keep practicing! Review the material and try again.")
 
     if st.button("Restart Quiz", key="restart_quiz_final"):
         restart_quiz()
