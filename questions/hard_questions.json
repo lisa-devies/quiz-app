@@ -1,0 +1,68 @@
+[
+    {
+        "question": "Which of the following best describes how Azure Synapse Analytics handles both on-demand and provisioned query workloads?",
+        "options": [
+            "It only supports provisioned resources for SQL-based querying.",
+            "It separates storage and compute but requires dedicated resources for all workloads.",
+            "It supports both serverless (on-demand) SQL pools and provisioned SQL pools.",
+            "It relies entirely on Apache Spark for all processing."
+        ],
+        "correct_answer": "It supports both serverless (on-demand) SQL pools and provisioned SQL pools.",
+        "explanation": "Azure Synapse Analytics offers both provisioned (dedicated) SQL pools and serverless SQL pools, allowing users to choose based on workload type and cost-efficiency."
+    },
+    {
+        "question": "When choosing between Azure Cosmos DB and Azure SQL Database, which key feature of Cosmos DB provides a significant advantage for low-latency, globally distributed applications?",
+        "options": [
+            "Built-in machine learning models",
+            "ACID transactions across multiple tables",
+            "Multi-region writes with automatic failover",
+            "Support for T-SQL syntax"
+        ],
+        "correct_answer": "Multi-region writes with automatic failover",
+        "explanation": "Azure Cosmos DB allows for multi-region writes and automatic failover, making it ideal for globally distributed, highly available applications."
+    },
+    {
+        "question": "In Azure Data Factory, which integration runtime would you use for data movement across a virtual network without public exposure?",
+        "options": [
+            "Azure Integration Runtime",
+            "Self-hosted Integration Runtime",
+            "Linked Integration Runtime",
+            "Hybrid Integration Runtime"
+        ],
+        "correct_answer": "Self-hosted Integration Runtime",
+        "explanation": "The Self-hosted Integration Runtime is used when you need to move data between on-premises or private network resources and Azure, especially without exposing data sources to the internet."
+    },
+    {
+        "question": "Which of the following scenarios is best suited for Azure Data Lake Storage Gen2 over Blob Storage?",
+        "options": [
+            "Serving images for a web app",
+            "Storing time-series telemetry data with indexing",
+            "Storing massive analytical datasets with hierarchical namespace",
+            "Hosting static website content"
+        ],
+        "correct_answer": "Storing massive analytical datasets with hierarchical namespace",
+        "explanation": "Azure Data Lake Storage Gen2 extends Blob Storage with a hierarchical namespace optimized for analytics workloads that require massive throughput and compatibility with big data tools like Hadoop and Spark."
+    },
+    {
+        "question": "Which Azure service provides schema-on-read capabilities ideal for semi-structured data formats such as JSON and Parquet?",
+        "options": [
+            "Azure SQL Managed Instance",
+            "Azure Stream Analytics",
+            "Azure Synapse Analytics (serverless SQL pool)",
+            "Azure Data Factory"
+        ],
+        "correct_answer": "Azure Synapse Analytics (serverless SQL pool)",
+        "explanation": "Serverless SQL pools in Synapse allow querying files in storage (e.g., Parquet, JSON, CSV) using T-SQL without ingesting them first — a schema-on-read approach."
+    },
+    {
+        "question": "Which feature of Azure Cosmos DB enables support for different APIs such as SQL (Core), MongoDB, Cassandra, Gremlin, and Table?",
+        "options": [
+            "API Gateway Layer",
+            "Multi-model API integration",
+            "API for NoSQL routing layer",
+            "Wire protocol compatibility"
+        ],
+        "correct_answer": "Wire protocol compatibility",
+        "explanation": "Azure Cosmos DB achieves support for multiple data models by implementing wire protocol compatibility with APIs like MongoDB and Cassandra, allowing existing drivers to work with Cosmos DB."
+    }
+]

@@ -6,54 +6,14 @@ from typing import Any
 # Set page configuration
 st.set_page_config(page_title="Exam Quiz quiz-app", page_icon="📝", layout="centered")
 
-# Custom CSS to improve appearance
-st.markdown(
-    """
-    <style>
-    .main {
-        padding: 2rem;
-    }
-    .stButton button {
-        width: 100%;
-        margin-bottom: 10px;
-        border-radius: 5px;
-        padding: 12px;
-    }
-    .feedback-correct {
-        background-color: #d4edda;
-        color: #155724;
-        padding: 15px;
-        border-radius: 5px;
-        margin: 10px 0;
-    }
-    .feedback-incorrect {
-        background-color: #f8d7da;
-        color: #721c24;
-        padding: 15px;
-        border-radius: 5px;
-        margin: 10px 0;
-    }
-    .question-card {
-        background-color: #f8f9fa;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        margin-bottom: 20px;
-    }
-    h1 {
-        color: #343a40;
-    }
-    .progress-text {
-        text-align: center;
-        margin-bottom: 15px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+# load custom CSS from text file
+with open("style.css") as f:
+    css = f.read()
+
+st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
 
-def load_questions_from_file(file_path: str = "questions.json") -> Any:
+def load_questions_from_file(file_path: str = "questions/questions.json") -> Any:
     try:
         with open(file_path, "r") as file:
             return json.load(file)
@@ -83,30 +43,25 @@ def initialize_state() -> None:
         st.session_state.shuffle_questions = False
 
 
-# Initialize state
-initialize_state()
-
-# App header
-st.title("📝 Exam Quiz quiz-app")
-
-# Sidebar for settings and stats
-with st.sidebar:
-    st.header("Quiz Settings")
-
-    # Option to shuffle questions
-    shuffle = st.checkbox("Shuffle Questions", value=st.session_state.shuffle_questions)
-    if shuffle != st.session_state.shuffle_questions:
+def reset_quiz(shuffle: bool = None) -> None:
+    """Reset the quiz to its initial state."""
+    # Only update shuffle setting if explicitly provided
+    if shuffle is not None:
         st.session_state.shuffle_questions = shuffle
-        if shuffle:
-            random.shuffle(st.session_state.questions)
-        st.session_state.current_question = 0
-        st.session_state.correct_answers = 0
-        st.session_state.total_answered = 0
-        st.session_state.answered = False
-        st.rerun()
 
-    # Stats
+    if st.session_state.shuffle_questions:
+        random.shuffle(st.session_state.questions)
+
+    st.session_state.current_question = 0
+    st.session_state.correct_answers = 0
+    st.session_state.total_answered = 0
+    st.session_state.answered = False
+
+
+def display_quiz_stats() -> None:
+    """Display quiz statistics in the sidebar."""
     st.header("Quiz Stats")
+
     if st.session_state.total_answered > 0:
         score_percentage = (
             st.session_state.correct_answers / st.session_state.total_answered
@@ -116,18 +71,52 @@ with st.sidebar:
             f"Correct Answers: {st.session_state.correct_answers}/{st.session_state.total_answered}"
         )
 
-    # Reset button
-    if st.button("Restart Quiz", key="restart_quiz"):
-        if st.session_state.shuffle_questions:
-            random.shuffle(st.session_state.questions)
-        st.session_state.current_question = 0
-        st.session_state.correct_answers = 0
-        st.session_state.total_answered = 0
-        st.session_state.answered = False
+
+def display_quiz_settings() -> None:
+    """Display and handle quiz settings in the sidebar."""
+    st.header("Quiz Settings")
+
+    # Option to shuffle questions with callback
+    previous_shuffle = st.session_state.shuffle_questions
+    shuffle = st.checkbox("Shuffle Questions", value=previous_shuffle)
+
+    # Only reset if shuffle setting has changed
+    if shuffle != previous_shuffle:
+        reset_quiz(shuffle=shuffle)
         st.rerun()
 
-# Main quiz interface
-if st.session_state.current_question < len(st.session_state.questions):
+
+def create_sidebar() -> None:
+    """Create the quiz sidebar with settings and stats."""
+    with st.sidebar:
+        display_quiz_settings()
+        display_quiz_stats()
+
+        # Reset button
+        if st.button("Restart Quiz", key="restart_quiz"):
+            reset_quiz()
+            st.rerun()
+
+        # Choose question set
+        st.header("Choose Question Set")
+        if st.button("Hard questions", key="load_hard_questions"):
+            st.session_state.questions = load_questions_from_file("questions/hard_questions.json")
+            reset_quiz()
+            st.rerun()
+
+        if st.button("Azure tools questions", key="load_azure_questions"):
+            st.session_state.questions = load_questions_from_file("questions/azure_tools_questions.json")
+            reset_quiz()
+            st.rerun()
+
+        if st.button("Default questions", key="load_default_questions"):
+            st.session_state.questions = load_questions_from_file("questions/questions.json")
+            reset_quiz()
+            st.rerun()
+
+
+
+def display_progress_bar() -> None:
     # Progress bar
     progress = (st.session_state.current_question) / len(st.session_state.questions)
     st.progress(progress)
@@ -136,60 +125,79 @@ if st.session_state.current_question < len(st.session_state.questions):
         unsafe_allow_html=True,
     )
 
-    current_q = st.session_state.questions[st.session_state.current_question]
 
-    # Display question
+def display_question(question_data: dict[str, str]) -> None:
+    """Display the current question."""
     st.markdown(
-        f'<div class="question-card"><h3>{current_q["question"]}</h3></div>',
+        f'<div class="question-card"><h3>{question_data["question"]}</h3></div>',
         unsafe_allow_html=True,
     )
 
-    # Display options as buttons
+
+def handle_answer_selection(question_data: dict[str, str]) -> None:
+    """Display answer options as buttons and handle selection."""
     if not st.session_state.answered:
-        for option in current_q["options"]:
+        for option in question_data["options"]:
             if st.button(option, key=option):
                 st.session_state.selected_option = option
                 st.session_state.answered = True
                 st.session_state.total_answered += 1
-                if option == current_q["correct_answer"]:
+
+                if option == question_data["correct_answer"]:
                     st.session_state.correct_answers += 1
+
                 st.rerun()
-    else:
-        # Show feedback after answering
-        is_correct = st.session_state.selected_option == current_q["correct_answer"]
 
-        # Highlight the selected option
-        for option in current_q["options"]:
-            if option == st.session_state.selected_option:
-                if is_correct:
-                    st.success(f"✓ {option}")
-                else:
-                    st.error(f"✗ {option}")
-            elif option == current_q["correct_answer"] and not is_correct:
-                st.success(f"✓ {option} (Correct answer)")
+
+def show_answer_feedback(question_data: dict[str, str]) -> None:
+    """Show feedback after the user has answered."""
+    is_correct = st.session_state.selected_option == question_data["correct_answer"]
+
+    # Highlight selected option and correct answer
+    for option in question_data["options"]:
+        if option == st.session_state.selected_option:
+            if is_correct:
+                st.success(f"✓ {option}")
             else:
-                st.write(option)
-
-        # Show explanation
-        if is_correct:
-            st.markdown(
-                f'<div class="feedback-correct"><b>Correct!</b><br>{current_q["explanation"]}</div>',
-                unsafe_allow_html=True,
-            )
+                st.error(f"✗ {option}")
+        elif option == question_data["correct_answer"] and not is_correct:
+            st.success(f"✓ {option} (Correct answer)")
         else:
-            st.markdown(
-                f'<div class="feedback-incorrect"><b>Incorrect.</b> The correct answer is: {current_q["correct_answer"]}<br>{current_q["explanation"]}</div>',
-                unsafe_allow_html=True,
-            )
+            st.write(option)
 
-        # Next question button
-        if st.button("Next Question", key="next_question"):
-            st.session_state.current_question += 1
-            st.session_state.answered = False
-            st.session_state.selected_option = None
-            st.rerun()
-else:
-    # Quiz completed
+    # Show explanation
+    if is_correct:
+        st.markdown(
+            f'<div class="feedback-correct"><b>Correct!</b><br>{question_data["explanation"]}</div>',
+            unsafe_allow_html=True,
+        )
+    else:
+        st.markdown(
+            f'<div class="feedback-incorrect"><b>Incorrect.</b> The correct answer is: {question_data["correct_answer"]}<br>{question_data["explanation"]}</div>',
+            unsafe_allow_html=True,
+        )
+
+    # Next question button
+    if st.button("Next Question", key="next_question"):
+        st.session_state.current_question += 1
+        st.session_state.answered = False
+        st.session_state.selected_option = None
+        st.rerun()
+
+
+def restart_quiz() -> None:
+    """Reset quiz to initial state."""
+    if st.session_state.shuffle_questions:
+        random.shuffle(st.session_state.questions)
+    st.session_state.current_question = 0
+    st.session_state.correct_answers = 0
+    st.session_state.total_answered = 0
+    st.session_state.answered = False
+    st.session_state.selected_option = None
+
+
+def show_quiz_completion() -> None:
+    """Display quiz completion screen with score and feedback."""
     st.success("🎉 Quiz Completed!")
 
     score_percentage = (
@@ -201,21 +209,53 @@ else:
 
     # Performance feedback
     if score_percentage >= 90:
-        st.markdown("#### 🏆 Excellent job! You've mastered this material!")
+        st.markdown("#### 🥹 Excellent job! You really know this 🌟")
     elif score_percentage >= 70:
         st.markdown(
-            "#### 👍 Good work! You have a solid understanding of the material."
+            "#### 🥰 Good work! You know this pretty well."
         )
     elif score_percentage >= 50:
-        st.markdown("#### 📚 Not bad, but there's room for improvement.")
+        st.markdown("#### 🤭 Not bad, but there's room for improvement")
     else:
-        st.markdown("#### 💪 Keep practicing! Review the material and try again.")
+        st.markdown("#### 🫣 Keep practicing! Review the material and try again.")
 
     if st.button("Restart Quiz", key="restart_quiz_final"):
-        if st.session_state.shuffle_questions:
-            random.shuffle(st.session_state.questions)
-        st.session_state.current_question = 0
-        st.session_state.correct_answers = 0
-        st.session_state.total_answered = 0
-        st.session_state.answered = False
+        restart_quiz()
         st.rerun()
+
+
+def show_quiz_interface() -> None:
+    """Display the main quiz interface based on current state."""
+    if st.session_state.current_question < len(st.session_state.questions):
+        display_progress_bar()
+
+        # Get current question
+        current_q = st.session_state.questions[st.session_state.current_question]
+
+        # Display question
+        display_question(current_q)
+
+        # Handle answering or showing feedback
+        if not st.session_state.answered:
+            handle_answer_selection(current_q)
+        else:
+            show_answer_feedback(current_q)
+    else:
+        show_quiz_completion()
+
+
+def main() -> None:
+    # Initialize state
+    initialize_state()
+
+    # App header
+    st.title("🍀quiz-app🍀")
+
+    # Sidebar
+    create_sidebar()
+
+    show_quiz_interface()
+
+
+if __name__ == "__main__":
+    main()

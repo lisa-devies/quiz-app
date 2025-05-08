@@ -1,0 +1,37 @@
+.main {
+    padding: 2rem;
+}
+.stButton button {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 12px;
+}
+.feedback-correct {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.feedback-incorrect {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.question-card {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+h1 {
+    color: #343a40;
+}
+.progress-text {
+    text-align: center;
+    margin-bottom: 15px;
+}
