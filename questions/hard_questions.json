@@ -64,5 +64,195 @@
         ],
         "correct_answer": "Wire protocol compatibility",
         "explanation": "Azure Cosmos DB achieves support for multiple data models by implementing wire protocol compatibility with APIs like MongoDB and Cassandra, allowing existing drivers to work with Cosmos DB."
-    }
+    },
+    {
+        "question": "Which Azure service can be used for orchestrating and automating data movement between on-premises and cloud data sources?",
+        "options": [
+            "Azure Stream Analytics",
+            "Azure Data Factory",
+            "Azure Data Lake Storage",
+            "Azure Logic Apps"
+        ],
+        "correct_answer": "Azure Data Factory",
+        "explanation": "Azure Data Factory is used to build and schedule data pipelines for moving and transforming data across various sources, including on-premises and cloud."
+    },
+    {
+        "question": "Which Azure service can be used for collecting and ingesting telemetry data from IoT devices at high throughput?",
+        "options": [
+            "Azure Data Factory",
+            "Azure Event Hubs",
+            "Azure SQL Database",
+            "Azure Synapse Analytics"
+        ],
+        "correct_answer": "Azure Event Hubs",
+        "explanation": "Azure Event Hubs is a big data streaming platform capable of ingesting millions of events per second, commonly used for telemetry and IoT scenarios."
+    },
+    {
+        "question": "Which Azure service can be used for visual, drag-and-drop machine learning model creation?",
+        "options": [
+            "Azure Machine Learning designer",
+            "Azure Synapse Studio",
+            "Azure Data Factory",
+            "Azure Logic Apps"
+        ],
+        "correct_answer": "Azure Machine Learning designer",
+        "explanation": "Azure Machine Learning designer provides a no-code/low-code interface for creating and deploying machine learning pipelines visually."
+    },
+    {
+        "question": "Which Azure service can be used to process and analyze data in motion, such as streaming social media feeds?",
+        "options": [
+            "Azure Data Factory",
+            "Azure Stream Analytics",
+            "Azure Synapse Analytics",
+            "Azure Data Lake Storage"
+        ],
+        "correct_answer": "Azure Stream Analytics",
+        "explanation": "Azure Stream Analytics is optimized for real-time analytics on streaming data such as logs, social media feeds, or IoT device output."
+    },
+    {
+        "question": "Which Azure service can be used to host structured, transactional data with full SQL support?",
+        "options": [
+            "Azure Blob Storage",
+            "Azure Cosmos DB",
+            "Azure SQL Database",
+            "Azure Data Lake Storage"
+        ],
+        "correct_answer": "Azure SQL Database",
+        "explanation": "Azure SQL Database is a fully managed relational database service with support for SQL queries, transactions, and indexing."
+    },
+    {
+        "question": "Which Azure service can be used to store petabytes of unstructured data for analytics purposes?",
+        "options": [
+            "Azure SQL Managed Instance",
+            "Azure Cosmos DB",
+            "Azure Data Lake Storage",
+            "Azure Stream Analytics"
+        ],
+        "correct_answer": "Azure Data Lake Storage",
+        "explanation": "Azure Data Lake Storage is designed to store massive amounts of structured and unstructured data for big data analytics use cases."
+    },
+    {
+        "question": "Which Azure service can be used for running interactive queries directly on data stored in Azure Storage, without provisioning compute resources?",
+        "options": [
+            "Azure Data Factory",
+            "Azure SQL Database",
+            "Azure Synapse Analytics (serverless SQL pool)",
+            "Azure Cosmos DB"
+        ],
+        "correct_answer": "Azure Synapse Analytics (serverless SQL pool)",
+        "explanation": "Serverless SQL pools in Synapse allow users to query data directly in storage (e.g., CSV, JSON, Parquet) without the need to provision a dedicated SQL pool."
+    },
+    [
+        {
+            "question": "Which feature of Azure SQL Database helps maintain performance during unpredictable workloads without manual tuning?",
+            "options": [
+                "Always On availability groups",
+                "Elastic Pools",
+                "Manual scaling",
+                "Geo-replication"
+            ],
+            "correct_answer": "Elastic Pools",
+            "explanation": "Elastic Pools enable multiple databases to share resources like CPU and memory, helping maintain performance and optimize cost for variable workloads."
+        },
+        {
+            "question": "Which Azure service supports querying semi-structured data such as JSON, directly from files stored in Azure Data Lake without ingesting into a database?",
+            "options": [
+                "Azure Stream Analytics",
+                "Azure SQL Managed Instance",
+                "Azure Synapse Analytics (serverless SQL pool)",
+                "Azure Cosmos DB"
+            ],
+            "correct_answer": "Azure Synapse Analytics (serverless SQL pool)",
+            "explanation": "Serverless SQL pools in Synapse allow querying data formats like JSON and Parquet directly from Data Lake using T-SQL without loading the data."
+        },
+        {
+            "question": "Which consistency level in Azure Cosmos DB ensures that reads never return data older than a specified time interval or version?",
+            "options": [
+                "Strong",
+                "Eventual",
+                "Bounded Staleness",
+                "Session"
+            ],
+            "correct_answer": "Bounded Staleness",
+            "explanation": "Bounded Staleness provides a guarantee that reads lag behind writes by a set time or number of versions, making it predictable but more performant than strong consistency."
+        },
+        {
+            "question": "Which Azure service provides a unified experience for data ingestion, exploration, transformation, and orchestration, all in a single workspace?",
+            "options": [
+                "Azure Data Factory",
+                "Azure Machine Learning",
+                "Azure Synapse Analytics",
+                "Azure Databricks"
+            ],
+            "correct_answer": "Azure Synapse Analytics",
+            "explanation": "Azure Synapse Analytics integrates ingestion, SQL and Spark processing, visualization, and orchestration, offering a complete analytics experience in one workspace."
+        },
+        {
+            "question": "Which Azure service supports ACID transactions, horizontal scaling, and multiple data models such as key-value, document, graph, and column-family?",
+            "options": [
+                "Azure SQL Database",
+                "Azure Cosmos DB",
+                "Azure Table Storage",
+                "Azure Database for PostgreSQL"
+            ],
+            "correct_answer": "Azure Cosmos DB",
+            "explanation": "Cosmos DB supports multiple NoSQL data models and offers ACID-compliant transactions at the item level along with global distribution and horizontal scalability."
+        },
+        {
+            "question": "Which data processing type is most suitable for detecting fraud in financial transactions as they occur?",
+            "options": [
+                "Batch processing",
+                "Real-time processing",
+                "Interactive processing",
+                "Parallel processing"
+            ],
+            "correct_answer": "Real-time processing",
+            "explanation": "Real-time processing is used to analyze streaming data on-the-fly, which is essential in use cases like fraud detection where immediate action is needed."
+        },
+        {
+            "question": "Which service provides automated scaling, patching, backups, and built-in high availability for relational workloads?",
+            "options": [
+                "Azure Synapse Analytics",
+                "Azure SQL Database",
+                "Azure Virtual Machines with SQL Server",
+                "Azure Data Lake Storage"
+            ],
+            "correct_answer": "Azure SQL Database",
+            "explanation": "Azure SQL Database is a fully managed platform-as-a-service (PaaS) offering with features like auto-scaling, patching, high availability, and backup."
+        },
+        {
+            "question": "Which Azure storage solution is optimized for high-throughput, distributed analytics using the Hadoop ecosystem?",
+            "options": [
+                "Azure Table Storage",
+                "Azure Blob Storage",
+                "Azure SQL Database",
+                "Azure Data Lake Storage Gen2"
+            ],
+            "correct_answer": "Azure Data Lake Storage Gen2",
+            "explanation": "Azure Data Lake Storage Gen2 is built on top of Blob Storage and optimized for big data analytics using tools like Spark, Hadoop, and Hive."
+        },
+        {
+            "question": "What is a key benefit of using partition keys in Azure Cosmos DB?",
+            "options": [
+                "Enables SQL queries across containers",
+                "Ensures data encryption",
+                "Improves read/write throughput and scalability",
+                "Reduces storage costs"
+            ],
+            "correct_answer": "Improves read/write throughput and scalability",
+            "explanation": "Partition keys help Cosmos DB distribute data evenly across physical partitions, enabling higher throughput and horizontal scalability."
+        },
+        {
+            "question": "Which processing model is used by Azure Stream Analytics to evaluate data over time windows, such as detecting trends or anomalies in a 5-minute interval?",
+            "options": [
+                "Stream partitioning",
+                "Windowed aggregation",
+                "Batch evaluation",
+                "Temporal joins"
+            ],
+            "correct_answer": "Windowed aggregation",
+            "explanation": "Azure Stream Analytics supports windowed aggregations, allowing data to be processed over sliding, tumbling, or hopping time intervals."
+        }
+    ]
+    
 ]
