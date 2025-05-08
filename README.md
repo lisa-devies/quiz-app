@@ -43,9 +43,10 @@ uv pip install streamlit
 streamlit run app.py
 ```
 
-## Customizing Questions
+### Customizing Questions
+Question sets are stored as separate .json files in the questions/ directory. Each file is automatically loaded and displayed as a selectable button in the app's sidebar, so there's no need to manually update the code when adding new sets.
 
-Questions are stored in `questions.json`. You can modify this file to add your own questions or change existing ones. Each question follows this format:
+To create your own set of questions, create a new .json file in the questions/ folder (e.g., azure_questions.json). Use the following format for each question:
 
 ```json
 {
@@ -60,6 +61,9 @@ Questions are stored in `questions.json`. You can modify this file to add your o
     "explanation": "Azure Synapse Analytics is an integrated analytics service that brings together data integration, enterprise data warehousing, and big data analytics."
 }
 ```
+Save the file. The new question set will appear in the sidebar automatically, with the filename (excluding .json) converted into a readable button label (e.g., azure_questions.json becomes "Azure Questions").
+
+
 
 ## Project Structure
 
