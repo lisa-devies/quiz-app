@@ -1,0 +1,112 @@
+[
+    {
+        "question": "What is a key characteristic of a relational database?",
+        "options": [
+            "Stores data as key-value pairs",
+            "Stores data in tables with predefined schema",
+            "Allows unstructured text and binary files",
+            "Supports only eventual consistency"
+        ],
+        "correct_answer": "Stores data in tables with predefined schema",
+        "explanation": "Relational databases organize data into tables with a fixed schema, supporting relationships between tables using keys."
+    },
+    {
+        "question": "What is the primary purpose of a data warehouse?",
+        "options": [
+            "Real-time transactional processing",
+            "Storing images and videos",
+            "Analyzing historical data from multiple sources",
+            "Managing access control for file storage"
+        ],
+        "correct_answer": "Analyzing historical data from multiple sources",
+        "explanation": "Data warehouses are optimized for large-scale analytical queries over historical data that has been integrated from multiple sources."
+    },
+    {
+        "question": "Which of the following is a benefit of schema-on-read?",
+        "options": [
+            "Faster data ingestion since structure is applied later",
+            "Strict enforcement of data quality before storage",
+            "Higher transaction throughput",
+            "Better performance for OLTP workloads"
+        ],
+        "correct_answer": "Faster data ingestion since structure is applied later",
+        "explanation": "Schema-on-read allows data to be ingested in its raw form and interpreted at query time, which accelerates ingestion but may slow down reads."
+    },
+    {
+        "question": "Which of the following best describes structured data?",
+        "options": [
+            "Binary log files collected from sensors",
+            "Data that resides in fixed fields within a record or file",
+            "Images stored in a blob container",
+            "Tweets or social media posts"
+        ],
+        "correct_answer": "Data that resides in fixed fields within a record or file",
+        "explanation": "Structured data conforms to a tabular schema with fields, making it easy to store and query using SQL."
+    },
+    {
+        "question": "Which scenario is most appropriate for a NoSQL database?",
+        "options": [
+            "Banking transactions requiring strict ACID compliance",
+            "Storing hierarchical JSON documents with flexible schemas",
+            "Running complex JOIN queries between multiple tables",
+            "Executing stored procedures for reporting"
+        ],
+        "correct_answer": "Storing hierarchical JSON documents with flexible schemas",
+        "explanation": "NoSQL databases are ideal for handling unstructured or semi-structured data with dynamic schemas, like JSON documents."
+    },
+    {
+        "question": "What is the purpose of a primary key in a database table?",
+        "options": [
+            "To encrypt the table data",
+            "To reference data in another table",
+            "To uniquely identify each record in the table",
+            "To sort the data automatically"
+        ],
+        "correct_answer": "To uniquely identify each record in the table",
+        "explanation": "A primary key ensures that each row in the table is unique and serves as the main identifier for records."
+    },
+    {
+        "question": "What is the main difference between OLTP and OLAP systems?",
+        "options": [
+            "OLTP systems use AI while OLAP systems do not",
+            "OLTP handles transactional workloads; OLAP handles analytical workloads",
+            "OLTP is cloud-only while OLAP is on-premises only",
+            "OLTP processes images; OLAP processes video"
+        ],
+        "correct_answer": "OLTP handles transactional workloads; OLAP handles analytical workloads",
+        "explanation": "OLTP (Online Transaction Processing) is optimized for fast insert/update/delete operations, while OLAP (Online Analytical Processing) is optimized for querying and analysis of large datasets."
+    },
+    {
+        "question": "Which of the following is an example of semi-structured data?",
+        "options": [
+            "CSV file with consistent columns",
+            "An Excel spreadsheet",
+            "A JSON file containing nested objects",
+            "A relational table with enforced schema"
+        ],
+        "correct_answer": "A JSON file containing nested objects",
+        "explanation": "Semi-structured data includes some organizational properties like tags or keys, but does not follow a strict schema — JSON is a common format."
+    },
+    {
+        "question": "Which operation is used in SQL to combine rows from two or more tables based on a related column?",
+        "options": [
+            "JOIN",
+            "GROUP BY",
+            "INSERT",
+            "ORDER BY"
+        ],
+        "correct_answer": "JOIN",
+        "explanation": "A JOIN operation in SQL combines rows from two or more tables based on a related column, such as a foreign key."
+    },
+    {
+        "question": "In data analytics, what is the main goal of data transformation?",
+        "options": [
+            "To delete old records",
+            "To change data format or structure to support analysis",
+            "To encrypt sensitive fields",
+            "To back up critical data"
+        ],
+        "correct_answer": "To change data format or structure to support analysis",
+        "explanation": "Data transformation is the process of converting data into a suitable format or structure, often required for analysis or integration."
+    }
+]

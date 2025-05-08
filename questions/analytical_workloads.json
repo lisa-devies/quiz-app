@@ -1,0 +1,112 @@
+[
+    {
+        "question": "Which Azure service is most suitable for performing large-scale data analysis using both SQL and Apache Spark engines?",
+        "options": [
+            "Azure SQL Database",
+            "Azure Stream Analytics",
+            "Azure Synapse Analytics",
+            "Azure Data Factory"
+        ],
+        "correct_answer": "Azure Synapse Analytics",
+        "explanation": "Azure Synapse Analytics supports both T-SQL and Apache Spark runtimes, making it ideal for large-scale, unified analytics workloads."
+    },
+    {
+        "question": "In an Azure analytics workload, what role does Azure Data Factory typically play?",
+        "options": [
+            "Data visualization and reporting",
+            "Data ingestion and orchestration",
+            "Stream processing and real-time alerts",
+            "Relational data storage"
+        ],
+        "correct_answer": "Data ingestion and orchestration",
+        "explanation": "Azure Data Factory is used to ingest, transform, and orchestrate data movement between different sources and services in analytics pipelines."
+    },
+    {
+        "question": "Which Azure service is designed for real-time analytics on streaming data from sources like IoT devices or social media feeds?",
+        "options": [
+            "Azure Data Lake Storage",
+            "Azure Synapse Analytics",
+            "Azure Stream Analytics",
+            "Azure Data Factory"
+        ],
+        "correct_answer": "Azure Stream Analytics",
+        "explanation": "Azure Stream Analytics processes real-time data streams using SQL-like queries, enabling real-time dashboards and alerts."
+    },
+    {
+        "question": "What is a common use case for using Azure Data Lake in an analytics workload?",
+        "options": [
+            "Storing tabular data in a structured format",
+            "Hosting machine learning models in production",
+            "Storing large volumes of raw or semi-structured data for analytics",
+            "Running interactive dashboards"
+        ],
+        "correct_answer": "Storing large volumes of raw or semi-structured data for analytics",
+        "explanation": "Azure Data Lake is optimized for storing massive amounts of raw, structured, and semi-structured data used in analytical processing."
+    },
+    {
+        "question": "In an Azure-based analytics solution, which service would be used to build dashboards and reports from processed data?",
+        "options": [
+            "Azure Data Lake Storage",
+            "Azure Stream Analytics",
+            "Power BI",
+            "Azure Data Factory"
+        ],
+        "correct_answer": "Power BI",
+        "explanation": "Power BI is a business analytics tool that connects to data sources and allows users to create interactive dashboards and reports."
+    },
+    {
+        "question": "Which of the following best describes an end-to-end analytics workload on Azure?",
+        "options": [
+            "Storing backup copies of transactional databases in Azure",
+            "Ingesting, storing, transforming, analyzing, and visualizing data using Azure services",
+            "Deploying machine learning models to edge devices",
+            "Creating a virtual machine to run a local SQL Server"
+        ],
+        "correct_answer": "Ingesting, storing, transforming, analyzing, and visualizing data using Azure services",
+        "explanation": "An analytics workload typically involves the full data lifecycle: ingestion, storage, transformation, analysis, and visualization."
+    },
+    {
+        "question": "Which combination of services would most likely appear in a modern Azure analytics workload?",
+        "options": [
+            "Azure Functions, Azure Key Vault, Azure Monitor",
+            "Azure SQL Database, Azure Firewall, Azure Container Apps",
+            "Azure Data Factory, Azure Data Lake Storage, Azure Synapse Analytics, Power BI",
+            "Azure Virtual Machines, Azure Blob Storage, Azure CDN"
+        ],
+        "correct_answer": "Azure Data Factory, Azure Data Lake Storage, Azure Synapse Analytics, Power BI",
+        "explanation": "These services represent a typical modern analytics pipeline: orchestrating data (ADF), storing it (Data Lake), analyzing it (Synapse), and visualizing it (Power BI)."
+    },
+    {
+        "question": "Why would a company use Azure Synapse Analytics instead of Azure SQL Database in an analytics workload?",
+        "options": [
+            "It supports blockchain transactions",
+            "It offers support for mobile application development",
+            "It can handle petabyte-scale data warehousing and integrate with Spark",
+            "It is cheaper for small OLTP workloads"
+        ],
+        "correct_answer": "It can handle petabyte-scale data warehousing and integrate with Spark",
+        "explanation": "Azure Synapse is built for large-scale analytics and supports both SQL and Spark workloads, unlike Azure SQL which is better for OLTP."
+    },
+    {
+        "question": "Which Azure service enables scheduling and monitoring of data workflows across hybrid data environments?",
+        "options": [
+            "Azure Machine Learning",
+            "Azure Data Factory",
+            "Azure Analysis Services",
+            "Power BI"
+        ],
+        "correct_answer": "Azure Data Factory",
+        "explanation": "ADF allows you to schedule, monitor, and manage data workflows across on-premises and cloud sources."
+    },
+    {
+        "question": "What is a benefit of using a lakehouse architecture in Azure analytics workloads?",
+        "options": [
+            "Combines data visualization and security policies in one tool",
+            "Enables batch-only data processing",
+            "Combines the scalability of a data lake with the structure of a data warehouse",
+            "Provides automatic translation for multilingual data sources"
+        ],
+        "correct_answer": "Combines the scalability of a data lake with the structure of a data warehouse",
+        "explanation": "The lakehouse architecture integrates the flexibility of a data lake with the transactional capabilities and performance of a data warehouse."
+    }
+]
