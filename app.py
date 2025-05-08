@@ -7,10 +7,11 @@ from typing import Any
 st.set_page_config(page_title="Exam Quiz quiz-app", page_icon="📝", layout="centered")
 
 # load custom CSS from text file
-with open('style.css') as f:
+with open("style.css") as f:
     css = f.read()
 
-st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
+st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
+
 
 def load_questions_from_file(file_path: str = "questions.json") -> Any:
     try:
@@ -41,7 +42,8 @@ def initialize_state() -> None:
     if "shuffle_questions" not in st.session_state:
         st.session_state.shuffle_questions = False
 
-def reset_quiz(shuffle=None):
+
+def reset_quiz(shuffle: bool = None) -> None:
     """Reset the quiz to its initial state."""
     # Only update shuffle setting if explicitly provided
     if shuffle is not None:
@@ -55,32 +57,36 @@ def reset_quiz(shuffle=None):
     st.session_state.total_answered = 0
     st.session_state.answered = False
 
-def display_quiz_stats():
+
+def display_quiz_stats() -> None:
     """Display quiz statistics in the sidebar."""
     st.header("Quiz Stats")
 
     if st.session_state.total_answered > 0:
-        score_percentage = (st.session_state.correct_answers / st.session_state.total_answered) * 100
+        score_percentage = (
+            st.session_state.correct_answers / st.session_state.total_answered
+        ) * 100
         st.metric("Score", f"{score_percentage:.1f}%")
-        st.write(f"Correct Answers: {st.session_state.correct_answers}/{st.session_state.total_answered}")
+        st.write(
+            f"Correct Answers: {st.session_state.correct_answers}/{st.session_state.total_answered}"
+        )
 
 
-def display_quiz_settings():
+def display_quiz_settings() -> None:
     """Display and handle quiz settings in the sidebar."""
     st.header("Quiz Settings")
-    
+
     # Option to shuffle questions with callback
     previous_shuffle = st.session_state.shuffle_questions
     shuffle = st.checkbox("Shuffle Questions", value=previous_shuffle)
-    
+
     # Only reset if shuffle setting has changed
     if shuffle != previous_shuffle:
         reset_quiz(shuffle=shuffle)
         st.rerun()
 
 
-
-def create_sidebar():
+def create_sidebar() -> None:
     """Create the quiz sidebar with settings and stats."""
     with st.sidebar:
         display_quiz_settings()
@@ -92,7 +98,7 @@ def create_sidebar():
             st.rerun()
 
 
-def main():
+def main() -> None:
     # Initialize state
     initialize_state()
 
@@ -195,7 +201,6 @@ def main():
             st.session_state.total_answered = 0
             st.session_state.answered = False
             st.rerun()
-
 
 
 if __name__ == "__main__":
