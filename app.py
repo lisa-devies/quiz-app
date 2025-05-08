@@ -249,7 +249,7 @@ def main() -> None:
     initialize_state()
 
     # App header
-    st.title("📝 Exam Quiz quiz-app")
+    st.title("🍀quiz-app🍀")
 
     # Sidebar
     create_sidebar()
