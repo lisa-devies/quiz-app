@@ -13,7 +13,7 @@ with open("style.css") as f:
 st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
 
-def load_questions_from_file(file_path: str = "questions.json") -> Any:
+def load_questions_from_file(file_path: str = "questions/questions.json") -> Any:
     try:
         with open(file_path, "r") as file:
             return json.load(file)
@@ -96,6 +96,24 @@ def create_sidebar() -> None:
         if st.button("Restart Quiz", key="restart_quiz"):
             reset_quiz()
             st.rerun()
+
+        # Choose question set
+        st.header("Choose Question Set")
+        if st.button("Hard questions", key="load_hard_questions"):
+            st.session_state.questions = load_questions_from_file("questions/hard_questions.json")
+            reset_quiz()
+            st.rerun()
+
+        if st.button("Azure tools questions", key="load_azure_questions"):
+            st.session_state.questions = load_questions_from_file("questions/azure_tools_questions.json")
+            reset_quiz()
+            st.rerun()
+
+        if st.button("Default questions", key="load_default_questions"):
+            st.session_state.questions = load_questions_from_file("questions/questions.json")
+            reset_quiz()
+            st.rerun()
+
 
 
 def display_progress_bar() -> None:
