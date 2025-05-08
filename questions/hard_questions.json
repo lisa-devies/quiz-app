@@ -64,5 +64,82 @@
         ],
         "correct_answer": "Wire protocol compatibility",
         "explanation": "Azure Cosmos DB achieves support for multiple data models by implementing wire protocol compatibility with APIs like MongoDB and Cassandra, allowing existing drivers to work with Cosmos DB."
+    },
+    {
+        "question": "Which Azure service can be used for orchestrating and automating data movement between on-premises and cloud data sources?",
+        "options": [
+            "Azure Stream Analytics",
+            "Azure Data Factory",
+            "Azure Data Lake Storage",
+            "Azure Logic Apps"
+        ],
+        "correct_answer": "Azure Data Factory",
+        "explanation": "Azure Data Factory is used to build and schedule data pipelines for moving and transforming data across various sources, including on-premises and cloud."
+    },
+    {
+        "question": "Which Azure service can be used for collecting and ingesting telemetry data from IoT devices at high throughput?",
+        "options": [
+            "Azure Data Factory",
+            "Azure Event Hubs",
+            "Azure SQL Database",
+            "Azure Synapse Analytics"
+        ],
+        "correct_answer": "Azure Event Hubs",
+        "explanation": "Azure Event Hubs is a big data streaming platform capable of ingesting millions of events per second, commonly used for telemetry and IoT scenarios."
+    },
+    {
+        "question": "Which Azure service can be used for visual, drag-and-drop machine learning model creation?",
+        "options": [
+            "Azure Machine Learning designer",
+            "Azure Synapse Studio",
+            "Azure Data Factory",
+            "Azure Logic Apps"
+        ],
+        "correct_answer": "Azure Machine Learning designer",
+        "explanation": "Azure Machine Learning designer provides a no-code/low-code interface for creating and deploying machine learning pipelines visually."
+    },
+    {
+        "question": "Which Azure service can be used to process and analyze data in motion, such as streaming social media feeds?",
+        "options": [
+            "Azure Data Factory",
+            "Azure Stream Analytics",
+            "Azure Synapse Analytics",
+            "Azure Data Lake Storage"
+        ],
+        "correct_answer": "Azure Stream Analytics",
+        "explanation": "Azure Stream Analytics is optimized for real-time analytics on streaming data such as logs, social media feeds, or IoT device output."
+    },
+    {
+        "question": "Which Azure service can be used to host structured, transactional data with full SQL support?",
+        "options": [
+            "Azure Blob Storage",
+            "Azure Cosmos DB",
+            "Azure SQL Database",
+            "Azure Data Lake Storage"
+        ],
+        "correct_answer": "Azure SQL Database",
+        "explanation": "Azure SQL Database is a fully managed relational database service with support for SQL queries, transactions, and indexing."
+    },
+    {
+        "question": "Which Azure service can be used to store petabytes of unstructured data for analytics purposes?",
+        "options": [
+            "Azure SQL Managed Instance",
+            "Azure Cosmos DB",
+            "Azure Data Lake Storage",
+            "Azure Stream Analytics"
+        ],
+        "correct_answer": "Azure Data Lake Storage",
+        "explanation": "Azure Data Lake Storage is designed to store massive amounts of structured and unstructured data for big data analytics use cases."
+    },
+    {
+        "question": "Which Azure service can be used for running interactive queries directly on data stored in Azure Storage, without provisioning compute resources?",
+        "options": [
+            "Azure Data Factory",
+            "Azure SQL Database",
+            "Azure Synapse Analytics (serverless SQL pool)",
+            "Azure Cosmos DB"
+        ],
+        "correct_answer": "Azure Synapse Analytics (serverless SQL pool)",
+        "explanation": "Serverless SQL pools in Synapse allow users to query data directly in storage (e.g., CSV, JSON, Parquet) without the need to provision a dedicated SQL pool."
     }
 ]

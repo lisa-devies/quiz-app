@@ -100,20 +100,25 @@ def create_sidebar() -> None:
         # Choose question set
         st.header("Choose Question Set")
         if st.button("Hard questions", key="load_hard_questions"):
-            st.session_state.questions = load_questions_from_file("questions/hard_questions.json")
+            st.session_state.questions = load_questions_from_file(
+                "questions/hard_questions.json"
+            )
             reset_quiz()
             st.rerun()
 
         if st.button("Azure tools questions", key="load_azure_questions"):
-            st.session_state.questions = load_questions_from_file("questions/azure_tools_questions.json")
+            st.session_state.questions = load_questions_from_file(
+                "questions/azure_tools_questions.json"
+            )
             reset_quiz()
             st.rerun()
 
         if st.button("Default questions", key="load_default_questions"):
-            st.session_state.questions = load_questions_from_file("questions/questions.json")
+            st.session_state.questions = load_questions_from_file(
+                "questions/questions.json"
+            )
             reset_quiz()
             st.rerun()
-
 
 
 def display_progress_bar() -> None:
@@ -211,9 +216,7 @@ def show_quiz_completion() -> None:
     if score_percentage >= 90:
         st.markdown("#### 🥹 Excellent job! You really know this 🌟")
     elif score_percentage >= 70:
-        st.markdown(
-            "#### 🥰 Good work! You know this pretty well."
-        )
+        st.markdown("#### 🥰 Good work! You know this pretty well.")
     elif score_percentage >= 50:
         st.markdown("#### 🤭 Not bad, but there's room for improvement")
     else:
