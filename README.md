@@ -70,11 +70,15 @@ Save the file. The new question set will appear in the sidebar automatically, wi
 ```
 quiz-app/
 ├── app.py                        # Main Streamlit application
-├── questions.json                # Quiz questions data file
-├── .gitignore                    # Git ignore file
-├── justfile                      # Task runner commands for development
-├── pyproject.toml                # Project metadata and dependencies (managed with uv)
-└── README.md                     # This file
+├── questions/                   # Folder containing all question set JSON files
+│   ├── default_questions.json
+│   ├── hard_questions.json
+│   ├── azure_tools_questions.json
+│   └── ...                      # Add more .json files here as needed
+├── .gitignore                   # Git ignore file
+├── justfile                     # Task runner commands for development
+├── pyproject.toml               # Project metadata and dependencies (managed with uv)
+└── README.md                    # This file
 ```
 
 ## Usage
