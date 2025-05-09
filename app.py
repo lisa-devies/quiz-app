@@ -190,10 +190,6 @@ def display_question(question_data: dict[str, str]) -> None:
 def handle_answer_selection(question_data: dict[str, list[str] | str]) -> None:
     """Display answer options as buttons and handle selection."""
     if not st.session_state.answered:
-        # shuffle options
-        question_data["options"] = random.sample(
-            question_data["options"], len(question_data["options"])
-        )
         for option in question_data["options"]:
             if st.button(option, key=option):
                 st.session_state.selected_option = option
