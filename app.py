@@ -14,7 +14,9 @@ with open("style.css") as f:
 st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
 
-def load_questions_from_file(file_path: str = "questions/default_questions.json") -> Any:
+def load_questions_from_file(
+    file_path: str = "questions/default_questions.json",
+) -> Any:
     try:
         with open(file_path, "r") as file:
             return json.load(file)
@@ -22,28 +24,69 @@ def load_questions_from_file(file_path: str = "questions/default_questions.json"
         st.error(f"Error loading questions: {e}")
         return []
 
-def create_question_set_buttons() -> None:
-    st.header("Choose Question Set")
 
+def get_available_question_sets() -> list[tuple[str, str, str]]:
+    """
+    Get available question sets from the questions directory.
+
+    Returns:
+        list: List of tuples containing (filename, label, filepath)
+    """
     question_dir = "questions"
     if not os.path.exists(question_dir):
-        st.warning("Questions directory not found.")
-        return
+        return []
 
-    question_files = [
-        f for f in os.listdir(question_dir)
-        if f.endswith(".json")
-    ]
+    question_files = [f for f in os.listdir(question_dir) if f.endswith(".json")]
 
+    # Create list of (filename, label, filepath) tuples
+    question_sets = []
     for filename in question_files:
         filepath = os.path.join(question_dir, filename)
         # Turn 'hard_questions.json' into 'Hard Questions'
         label = os.path.splitext(filename)[0].replace("_", " ").title()
+        question_sets.append((filename, label, filepath))
 
+    return question_sets
+
+
+def initialize_question_set_state() -> None:
+    """Initialize question set state if not already present."""
+    if "selected_question_set" not in st.session_state:
+        st.session_state.selected_question_set = None
+
+
+def display_question_set_buttons() -> None:
+    """
+    Display buttons for question set selection UI.
+    Does not return anything - purely handles UI rendering.
+    """
+    st.header("Choose Question Set")
+
+    question_sets = get_available_question_sets()
+    if not question_sets:
+        st.warning("Questions directory not found.")
+        return
+
+    # Create a button for each question file
+    for filename, label, filepath in question_sets:
         if st.button(label, key=f"load_{label.lower().replace(' ', '_')}"):
             st.session_state.questions = load_questions_from_file(filepath)
+            st.session_state.selected_question_set = label
             reset_quiz()
             st.rerun()
+
+
+def get_selected_question_set() -> Any:
+    """
+    Get the currently selected question set label.
+
+    Returns:
+        str: The label of the selected question set, or None if nothing selected
+    """
+    # Ensure state is initialized
+    initialize_question_set_state()
+    return st.session_state.selected_question_set
+
 
 default_questions = load_questions_from_file()
 
@@ -121,7 +164,10 @@ def create_sidebar() -> None:
             st.rerun()
 
         # Choose question set
-        create_question_set_buttons()
+        initialize_question_set_state()
+
+        display_question_set_buttons()
+
 
 def display_progress_bar() -> None:
     # Progress bar
@@ -256,6 +302,11 @@ def main() -> None:
     # App header
     st.title("🍀quiz-app🍀")
 
+    selected_set = get_selected_question_set()
+    if selected_set:
+        st.markdown(f"### {selected_set}")
+    else:
+        st.markdown("### Default Questions")
     # Sidebar
     create_sidebar()
 
