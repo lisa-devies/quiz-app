@@ -54,4 +54,4 @@
       "correct_answer": "To maximize performance and scalability in distributed systems",
       "explanation": "NoSQL databases often prioritize scalability and performance by relaxing ACID guarantees, instead adopting BASE (Basically Available, Soft state, Eventually consistent) principles."
     }
-  ]
+]

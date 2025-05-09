@@ -53,5 +53,60 @@
       ],
       "correct_answer": "Page blob",
       "explanation": "Page blobs are used for scenarios that require random read/write access, such as virtual machine disks (VHDs), making them ideal for Azure VMs."
+    },
+    {
+        "question": "Which Azure Blob Storage access tier is optimized for infrequent access and offers lower storage costs but higher access costs?",
+        "options": [
+        "Hot",
+        "Cool",
+        "Archive",
+        "Premium"
+        ],
+        "correct_answer": "Cool",
+        "explanation": "The Cool tier is designed for data that is infrequently accessed but still needs to be available quickly when required. It offers lower storage costs but higher read and access costs than the Hot tier."
+    },
+    {
+        "question": "What happens when you rehydrate a blob from the Archive tier in Azure Blob Storage?",
+        "options": [
+        "The blob becomes immediately available for read/write access.",
+        "The blob is moved to the Cool or Hot tier, and rehydration may take several hours.",
+        "The blob is deleted and recreated in the selected tier.",
+        "The blob remains in Archive but with reduced latency."
+        ],
+        "correct_answer": "The blob is moved to the Cool or Hot tier, and rehydration may take several hours.",
+        "explanation": "Rehydrating a blob from Archive involves moving it to either the Hot or Cool tier, and this process can take several hours depending on the size of the data."
+    },
+    {
+        "question": "What is the maximum size of a single block in a block blob in Azure Blob Storage?",
+        "options": [
+        "100 MiB",
+        "4000 MiB",
+        "4000 MB",
+        "500 MiB"
+        ],
+        "correct_answer": "4000 MiB",
+        "explanation": "Each block in a block blob can be up to 4000 MiB (approximately 4 GiB) when using the latest REST API versions, which allows large data uploads efficiently."
+    },
+    {
+        "question": "Which statement best describes how data is uploaded to a block blob in Azure?",
+        "options": [
+        "Data must be uploaded in a single request.",
+        "Blocks are uploaded individually and committed later into a blob.",
+        "Only append operations are allowed.",
+        "Data is written byte-by-byte using a streaming API."
+        ],
+        "correct_answer": "Blocks are uploaded individually and committed later into a blob.",
+        "explanation": "Block blobs allow uploading blocks separately, which are later committed in order to form the final blob. This approach enables parallel uploads and resuming after failure."
+    },
+    {
+        "question": "What is the maximum number of blocks allowed in a single block blob in Azure Blob Storage?",
+        "options": [
+        "500",
+        "50,000",
+        "100,000",
+        "1,000,000"
+        ],
+        "correct_answer": "50,000",
+        "explanation": "A block blob can consist of up to 50,000 blocks, allowing a maximum blob size of up to ~190.7 TiB using 4000 MiB blocks."
     }
   ]
