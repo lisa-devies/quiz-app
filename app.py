@@ -187,7 +187,7 @@ def display_question(question_data: dict[str, str]) -> None:
     )
 
 
-def handle_answer_selection(question_data: dict[str, str]) -> None:
+def handle_answer_selection(question_data: dict[str, list[str] | str]) -> None:
     """Display answer options as buttons and handle selection."""
     if not st.session_state.answered:
         # shuffle options
