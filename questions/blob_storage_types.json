@@ -1,0 +1,57 @@
+[
+    {
+      "question": "Which Azure Blob Storage type is best suited for logging scenarios where new data is continuously appended to the end of a file?",
+      "options": [
+        "Page blob",
+        "Block blob",
+        "Append blob",
+        "Queue storage"
+      ],
+      "correct_answer": "Append blob",
+      "explanation": "Append blobs are optimized for append operations, making them ideal for logging and similar use cases where data is added sequentially."
+    },
+    {
+      "question": "Which blob type in Azure allows random read and write access to ranges of bytes within a file?",
+      "options": [
+        "Block blob",
+        "Append blob",
+        "Page blob",
+        "Table storage"
+      ],
+      "correct_answer": "Page blob",
+      "explanation": "Page blobs are designed for random read/write operations and are used primarily for virtual hard drives and large structured data."
+    },
+    {
+      "question": "You are storing large text or binary files (up to ~190 TB). Which blob type should you use for efficient upload and management?",
+      "options": [
+        "Page blob",
+        "Block blob",
+        "Append blob",
+        "File storage"
+      ],
+      "correct_answer": "Block blob",
+      "explanation": "Block blobs are optimized for large-scale uploads and are suitable for streaming and storing large amounts of unstructured data, such as media files."
+    },
+    {
+      "question": "What is a key difference between block blobs and append blobs in Azure Storage?",
+      "options": [
+        "Block blobs support only read operations; append blobs support read/write.",
+        "Block blobs allow appending data at the end; append blobs allow random access.",
+        "Append blobs only support adding blocks at the end; block blobs support uploading blocks in parallel and committing them later.",
+        "Append blobs are used for VM disks; block blobs are not."
+      ],
+      "correct_answer": "Append blobs only support adding blocks at the end; block blobs support uploading blocks in parallel and committing them later.",
+      "explanation": "Append blobs are designed to only allow appending new blocks to the end, whereas block blobs allow flexible uploading and ordering of blocks before committing them as a whole."
+    },
+    {
+      "question": "Which Azure blob type would be most appropriate for storing the virtual hard disk (VHD) of a VM?",
+      "options": [
+        "Block blob",
+        "Page blob",
+        "Append blob",
+        "Queue storage"
+      ],
+      "correct_answer": "Page blob",
+      "explanation": "Page blobs are used for scenarios that require random read/write access, such as virtual machine disks (VHDs), making them ideal for Azure VMs."
+    }
+  ]

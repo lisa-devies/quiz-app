@@ -1,0 +1,57 @@
+[
+    {
+      "question": "Which scenario best violates the 'Isolation' property of ACID in a database transaction?",
+      "options": [
+        "A transaction is rolled back due to an error during execution.",
+        "A transaction reads uncommitted changes made by another transaction.",
+        "Two transactions update the same row simultaneously but in different tables.",
+        "A system crash occurs before a transaction is completed."
+      ],
+      "correct_answer": "A transaction reads uncommitted changes made by another transaction.",
+      "explanation": "The Isolation property ensures that transactions do not affect each other. Reading uncommitted changes violates this by exposing intermediate, potentially invalid states."
+    },
+    {
+      "question": "What does the 'Consistency' property in ACID guarantee after a transaction completes?",
+      "options": [
+        "Data will remain locked until all other transactions are completed.",
+        "The database schema is always validated after each transaction.",
+        "The database transitions from one valid state to another, preserving data integrity constraints.",
+        "All users see the same data after each transaction."
+      ],
+      "correct_answer": "The database transitions from one valid state to another, preserving data integrity constraints.",
+      "explanation": "Consistency ensures that a transaction transforms the database from one valid state to another, maintaining all defined rules, constraints, and cascades."
+    },
+    {
+      "question": "Which ACID property is most directly ensured by implementing write-ahead logging (WAL) in a relational database?",
+      "options": [
+        "Atomicity",
+        "Isolation",
+        "Durability",
+        "Consistency"
+      ],
+      "correct_answer": "Durability",
+      "explanation": "Write-ahead logging guarantees that once a transaction is committed, its effects are permanent even in the case of system failure, ensuring Durability."
+    },
+    {
+      "question": "A bank transfer transaction debits one account and credits another. Which ACID property ensures that both actions succeed or fail together?",
+      "options": [
+        "Durability",
+        "Isolation",
+        "Atomicity",
+        "Consistency"
+      ],
+      "correct_answer": "Atomicity",
+      "explanation": "Atomicity ensures that all steps in a transaction are completed successfully. If one fails, the entire transaction is rolled back, maintaining system integrity."
+    },
+    {
+      "question": "Why might a NoSQL database relax strict adherence to ACID properties?",
+      "options": [
+        "To improve support for SQL-like queries",
+        "To enhance transaction isolation in distributed environments",
+        "To maximize performance and scalability in distributed systems",
+        "To comply with GDPR and other regulatory frameworks"
+      ],
+      "correct_answer": "To maximize performance and scalability in distributed systems",
+      "explanation": "NoSQL databases often prioritize scalability and performance by relaxing ACID guarantees, instead adopting BASE (Basically Available, Soft state, Eventually consistent) principles."
+    }
+  ]
