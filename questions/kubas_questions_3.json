@@ -1,0 +1,156 @@
+[
+    {
+        "question": "Which Azure service provides a managed Apache Hadoop environment for big data processing?",
+        "options": [
+            "Azure HDInsight",
+            "Azure Databricks",
+            "Azure Synapse Analytics",
+            "Azure Data Factory"
+        ],
+        "correct_answer": "Azure HDInsight",
+        "explanation": "Azure HDInsight is a managed cloud service that provides Apache Hadoop, Spark, Hive, and other big data processing frameworks for large-scale data analytics."
+    },
+    {
+        "question": "In Azure Cosmos DB, what is a Request Unit (RU)?",
+        "options": [
+            "A unit of storage capacity",
+            "A measure of compute resources for operations",
+            "A data encryption key",
+            "A network bandwidth metric"
+        ],
+        "correct_answer": "A measure of compute resources for operations",
+        "explanation": "Request Units (RUs) in Azure Cosmos DB measure the compute resources required for read, write, and query operations, used to provision and manage throughput."
+    },
+    {
+        "question": "Which Azure service is best for creating interactive reports and dashboards from multiple data sources?",
+        "options": [
+            "Azure Data Factory",
+            "Azure Power BI",
+            "Azure Synapse Analytics",
+            "Azure Databricks"
+        ],
+        "correct_answer": "Azure Power BI",
+        "explanation": "Azure Power BI is a business intelligence service that enables users to create interactive reports and dashboards by connecting to multiple data sources."
+    },
+    {
+        "question": "What is the purpose of a clustered index in a relational database?",
+        "options": [
+            "To store data in a compressed format",
+            "To physically order data in a table based on the indexed column",
+            "To replicate data across multiple nodes",
+            "To encrypt sensitive columns"
+        ],
+        "correct_answer": "To physically order data in a table based on the indexed column",
+        "explanation": "A clustered index determines the physical order of data in a table, improving query performance for range-based queries but allowing only one per table."
+    },
+    {
+        "question": "Which Azure service supports geospatial data processing and visualization?",
+        "options": [
+            "Azure Maps",
+            "Azure Data Lake Storage",
+            "Azure SQL Database",
+            "Azure Stream Analytics"
+        ],
+        "correct_answer": "Azure Maps",
+        "explanation": "Azure Maps is a geospatial service that provides mapping, search, routing, and geospatial data processing capabilities for location-based applications."
+    },
+    {
+        "question": "In Azure Synapse Analytics, what is the benefit of using a distributed table?",
+        "options": [
+            "It encrypts data at rest",
+            "It distributes data across nodes for parallel processing",
+            "It replicates data for high availability",
+            "It compresses data for storage efficiency"
+        ],
+        "correct_answer": "It distributes data across nodes for parallel processing",
+        "explanation": "Distributed tables in Azure Synapse Analytics partition data across multiple nodes, enabling parallel processing and improving query performance for large datasets."
+    },
+    {
+        "question": "Which Azure Cosmos DB feature ensures data is automatically replicated across multiple regions?",
+        "options": [
+            "Partitioning",
+            "Multi-region writes",
+            "Global distribution",
+            "Consistency levels"
+        ],
+        "correct_answer": "Global distribution",
+        "explanation": "Global distribution in Azure Cosmos DB automatically replicates data across multiple Azure regions, ensuring low-latency access and high availability for globally distributed applications."
+    },
+    {
+        "question": "In Azure Data Factory, what is the purpose of a trigger?",
+        "options": [
+            "To transform data within a pipeline",
+            "To schedule or initiate pipeline execution",
+            "To encrypt data during transfer",
+            "To monitor pipeline performance"
+        ],
+        "correct_answer": "To schedule or initiate pipeline execution",
+        "explanation": "Triggers in Azure Data Factory are used to schedule or initiate the execution of pipelines, such as on a schedule, in response to an event, or manually."
+    },
+    {
+        "question": "Which Azure service is best suited for managing metadata and enabling data governance across an organization?",
+        "options": [
+            "Azure Purview",
+            "Azure Data Lake Storage",
+            "Azure Synapse Analytics",
+            "Azure Stream Analytics"
+        ],
+        "correct_answer": "Azure Purview",
+        "explanation": "Azure Purview is a unified data governance service that helps organizations manage metadata, discover data assets, and ensure compliance through automated data classification and lineage."
+    },
+    {
+        "question": "What is the primary advantage of using a columnstore index in a relational database?",
+        "options": [
+            "Improved performance for transactional queries",
+            "Reduced storage for analytical queries",
+            "Automatic data encryption",
+            "Support for real-time data ingestion"
+        ],
+        "correct_answer": "Reduced storage for analytical queries",
+        "explanation": "Columnstore indexes store data in a columnar format, optimizing analytical queries by reducing storage requirements and improving compression and query performance."
+    },
+    {
+        "question": "Which Azure service provides a fully managed open-source database for PostgreSQL?",
+        "options": [
+            "Azure SQL Database",
+            "Azure Database for PostgreSQL",
+            "Azure Cosmos DB",
+            "Azure Synapse Analytics"
+        ],
+        "correct_answer": "Azure Database for PostgreSQL",
+        "explanation": "Azure Database for PostgreSQL is a fully managed relational database service that provides a scalable, high-availability implementation of the open-source PostgreSQL database."
+    },
+    {
+        "question": "In a data warehouse, what is the purpose of a fact table?",
+        "options": [
+            "To store descriptive attributes",
+            "To store measurable business metrics",
+            "To define relationships between tables",
+            "To index data for faster queries"
+        ],
+        "correct_answer": "To store measurable business metrics",
+        "explanation": "Fact tables in a data warehouse store measurable business metrics, such as sales amounts or quantities, which are used for analysis and reporting."
+    },
+    {
+        "question": "Which Azure Cosmos DB consistency level guarantees that reads reflect the most recent committed writes?",
+        "options": [
+            "Eventual",
+            "Session",
+            "Strong",
+            "Bounded staleness"
+        ],
+        "correct_answer": "Strong",
+        "explanation": "Strong consistency in Azure Cosmos DB ensures that reads always reflect the most recent committed writes, providing the highest consistency at the cost of higher latency."
+    },
+    {
+        "question": "What is the primary use case for Azure Data Lake Analytics?",
+        "options": [
+            "Real-time data streaming",
+            "Big data processing with U-SQL",
+            "Relational database management",
+            "Data visualization"
+        ],
+        "correct_answer": "Big data processing with U-SQL",
+        "explanation": "Azure Data Lake Analytics is designed for big data processing using U-SQL, a query language that combines SQL with C# for scalable analytics on large datasets."
+    }
+]

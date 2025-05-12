@@ -1,0 +1,167 @@
+[
+    {
+        "question": "Which Azure service is best suited for processing high-velocity IoT data in real time?",
+        "options": [
+            "Azure Data Factory",
+            "Azure Stream Analytics",
+            "Azure Synapse Analytics",
+            "Azure Data Lake Analytics"
+        ],
+        "correct_answer": "Azure Stream Analytics",
+        "explanation": "Azure Stream Analytics is designed for real-time data processing, making it ideal for high-velocity IoT data, with features like windowed aggregates and integration with Azure IoT Hub."
+    },
+    {
+        "question": "What is the purpose of a materialized view in Azure Synapse Analytics?",
+        "options": [
+            "To store temporary query results",
+            "To precompute and store aggregated data for faster queries",
+            "To replicate data across regions",
+            "To enforce data security policies"
+        ],
+        "correct_answer": "To precompute and store aggregated data for faster queries",
+        "explanation": "Materialized views in Azure Synapse Analytics precompute and store aggregated data, improving query performance by avoiding repeated calculations on large datasets."
+    },
+    {
+        "question": "Which consistency level in Azure Cosmos DB provides the highest availability but may result in reading stale data?",
+        "options": [
+            "Strong",
+            "Bounded staleness",
+            "Session",
+            "Eventual"
+        ],
+        "correct_answer": "Eventual",
+        "explanation": "Eventual consistency in Azure Cosmos DB prioritizes high availability and low latency, allowing reads to return slightly stale data until all replicas converge."
+    },
+    {
+        "question": "In a relational database, what is the purpose of a foreign key?",
+        "options": [
+            "To uniquely identify each row in a table",
+            "To enforce referential integrity between tables",
+            "To index columns for faster queries",
+            "To store encrypted data"
+        ],
+        "correct_answer": "To enforce referential integrity between tables",
+        "explanation": "A foreign key in a relational database links two tables, enforcing referential integrity by ensuring that values in the foreign key column correspond to valid values in the referenced table’s primary key."
+    },
+    {
+        "question": "Which Azure service would you use to perform advanced analytics using Apache Spark?",
+        "options": [
+            "Azure Data Factory",
+            "Azure Databricks",
+            "Azure Stream Analytics",
+            "Azure SQL Database"
+        ],
+        "correct_answer": "Azure Databricks",
+        "explanation": "Azure Databricks is an Apache Spark-based analytics platform optimized for big data processing and machine learning, providing a collaborative environment for advanced analytics."
+    },
+    {
+        "question": "What is the role of the Azure Data Catalog in a data management strategy?",
+        "options": [
+            "To process streaming data",
+            "To store large-scale datasets",
+            "To enable data discovery and metadata management",
+            "To automate data pipelines"
+        ],
+        "correct_answer": "To enable data discovery and metadata management",
+        "explanation": "Azure Data Catalog is a metadata management service that helps organizations discover, understand, and govern data assets by providing a centralized repository for metadata."
+    },
+    {
+        "question": "Which Azure service provides a fully managed relational database with automatic scaling and high availability?",
+        "options": [
+            "Azure Cosmos DB",
+            "Azure SQL Database",
+            "Azure Database for MySQL",
+            "Azure Data Lake Storage"
+        ],
+        "correct_answer": "Azure SQL Database",
+        "explanation": "Azure SQL Database is a fully managed relational database service that offers automatic scaling, high availability, and built-in intelligence for performance optimization."
+    },
+    {
+        "question": "What is the primary difference between OLTP and OLAP workloads?",
+        "options": [
+            "OLTP is for unstructured data, while OLAP is for structured data",
+            "OLTP handles transactional processing, while OLAP handles analytical processing",
+            "OLTP is cloud-based, while OLAP is on-premises",
+            "OLTP uses NoSQL databases, while OLAP uses relational databases"
+        ],
+        "correct_answer": "OLTP handles transactional processing, while OLAP handles analytical processing",
+        "explanation": "OLTP (Online Transaction Processing) is optimized for high-frequency, small transactions, while OLAP (Online Analytical Processing) is designed for complex, aggregated queries for analytics."
+    },
+    {
+        "question": "In Azure Synapse Analytics, what is the purpose of a dataflow?",
+        "options": [
+            "To execute SQL queries on large datasets",
+            "To transform data using a visual interface",
+            "To store data in a hierarchical structure",
+            "To monitor data pipeline performance"
+        ],
+        "correct_answer": "To transform data using a visual interface",
+        "explanation": "Dataflows in Azure Synapse Analytics provide a visual, code-free interface for transforming data, allowing users to clean, aggregate, and reshape data for analytics."
+    },
+    {
+        "question": "Which Azure Cosmos DB API is best suited for graph-based data models?",
+        "options": [
+            "SQL API",
+            "MongoDB API",
+            "Gremlin API",
+            "Cassandra API"
+        ],
+        "correct_answer": "Gremlin API",
+        "explanation": "The Gremlin API in Azure Cosmos DB is designed for graph-based data models, enabling traversal and querying of complex relationships in a highly scalable environment."
+    },
+    {
+        "question": "What is the benefit of using Azure Blob Storage with a hot access tier?",
+        "options": [
+            "Lowest storage cost",
+            "Highest data durability",
+            "Fastest access for frequently used data",
+            "Support for real-time analytics"
+        ],
+        "correct_answer": "Fastest access for frequently used data",
+        "explanation": "The hot access tier in Azure Blob Storage is optimized for frequently accessed data, providing low-latency access at a higher cost compared to cool or archive tiers."
+    },
+    {
+        "question": "Which Azure service is used to create a unified view of data across multiple sources for reporting?",
+        "options": [
+            "Azure Power BI Embedded",
+            "Azure Synapse Analytics",
+            "Azure Data Factory",
+            "Azure Data Lake Storage"
+        ],
+        "correct_answer": "Azure Synapse Analytics",
+        "explanation": "Azure Synapse Analytics integrates data from multiple sources, providing a unified view for reporting and analytics through its SQL and Spark capabilities."
+    },
+    {
+        "question": "What is the purpose of indexing in a relational database?",
+        "options": [
+            "To encrypt sensitive data",
+            "To improve query performance",
+            "To enforce data consistency",
+            "To replicate data across regions"
+        ],
+        "correct_answer": "To improve query performance",
+        "explanation": "Indexes in a relational database improve query performance by allowing faster data retrieval, though they may increase storage and write operation costs."
+    },
+    {
+        "question": "Which Azure service supports running SQL queries on semi-structured data stored in a data lake?",
+        "options": [
+            "Azure SQL Database",
+            "Azure Synapse Analytics",
+            "Azure Cosmos DB",
+            "Azure Data Factory"
+        ],
+        "correct_answer": "Azure Synapse Analytics",
+        "explanation": "Azure Synapse Analytics’ serverless SQL pools allow users to run SQL queries directly on semi-structured data stored in a data lake, without needing to load it into a database."
+    },
+    {
+        "question": "In Azure Data Factory, what is a pipeline?",
+        "options": [
+            "A storage container for raw data",
+            "A logical grouping of activities for data movement and transformation",
+            "A real-time data streaming service",
+            "A machine learning model"
+        ],
+        "correct_answer": "A logical grouping of activities for data movement and transformation",
+        "explanation": "A pipeline in Azure Data Factory is a logical grouping of activities that orchestrate data movement, transformation, and integration tasks across various sources."
+    }
+]

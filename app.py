@@ -36,7 +36,7 @@ def get_available_question_sets() -> list[tuple[str, str, str]]:
     if not os.path.exists(question_dir):
         return []
 
-    question_files = [f for f in os.listdir(question_dir) if f.endswith(".json")]
+    question_files = sorted([f for f in os.listdir(question_dir) if f.endswith(".json")])
 
     # Create list of (filename, label, filepath) tuples
     question_sets = []

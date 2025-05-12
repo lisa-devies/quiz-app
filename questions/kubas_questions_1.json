@@ -1,0 +1,112 @@
+[
+    {
+        "question": "Which Azure service provides a fully managed data warehouse solution optimized for large-scale data analytics?",
+        "options": [
+            "Azure SQL Database",
+            "Azure Synapse Analytics",
+            "Azure Cosmos DB",
+            "Azure Data Lake Storage"
+        ],
+        "correct_answer": "Azure Synapse Analytics",
+        "explanation": "Azure Synapse Analytics is a fully managed, integrated data analytics service that provides a unified experience for data warehousing, big data analytics, and data integration, optimized for large-scale analytics workloads."
+    },
+    {
+        "question": "In Azure Cosmos DB, what is the purpose of the partition key in a container?",
+        "options": [
+            "To encrypt data at rest",
+            "To distribute data across physical partitions for scalability",
+            "To define the primary key for querying",
+            "To enforce data integrity constraints"
+        ],
+        "correct_answer": "To distribute data across physical partitions for scalability",
+        "explanation": "The partition key in Azure Cosmos DB is used to distribute data across physical partitions, enabling scalability and efficient query performance by grouping related data together."
+    },
+    {
+        "question": "Which Azure service would you use to orchestrate and automate complex data workflows across multiple systems?",
+        "options": [
+            "Azure Logic Apps",
+            "Azure Data Factory",
+            "Azure Stream Analytics",
+            "Azure Databricks"
+        ],
+        "correct_answer": "Azure Data Factory",
+        "explanation": "Azure Data Factory is a cloud-based ETL and data integration service that allows you to create, schedule, and orchestrate complex data workflows across various data sources and destinations."
+    },
+    {
+        "question": "What is a key characteristic of a star schema in a data warehouse?",
+        "options": [
+            "It uses a single large table for all data",
+            "It organizes data into fact and dimension tables",
+            "It stores data in a graph-based structure",
+            "It requires NoSQL databases for implementation"
+        ],
+        "correct_answer": "It organizes data into fact and dimension tables",
+        "explanation": "A star schema is a data warehouse design that organizes data into fact tables (containing measurable data) and dimension tables (containing descriptive attributes), optimizing query performance."
+    },
+    {
+        "question": "Which Azure service supports both SQL and NoSQL data models within the same database?",
+        "options": [
+            "Azure SQL Database",
+            "Azure Cosmos DB",
+            "Azure Database for PostgreSQL",
+            "Azure Synapse Analytics"
+        ],
+        "correct_answer": "Azure Cosmos DB",
+        "explanation": "Azure Cosmos DB is a multi-model database service that supports multiple data models, including document (NoSQL), key-value, graph, and column-family, as well as SQL queries via its SQL API."
+    },
+    {
+        "question": "In Azure Data Lake Storage Gen2, what feature enables hierarchical namespace for better data organization?",
+        "options": [
+            "Blob versioning",
+            "Access control lists (ACLs)",
+            "Hierarchical file system",
+            "Soft delete"
+        ],
+        "correct_answer": "Hierarchical file system",
+        "explanation": "Azure Data Lake Storage Gen2 introduces a hierarchical file system, enabling a directory-based structure for better organization and management of large-scale data, unlike the flat namespace of Blob Storage."
+    },
+    {
+        "question": "What is the primary benefit of using Azure Synapse Analytics dedicated SQL pools over serverless SQL pools?",
+        "options": [
+            "Lower cost for ad-hoc queries",
+            "Support for real-time streaming",
+            "Predictable performance for large-scale workloads",
+            "Automatic scaling for all workloads"
+        ],
+        "correct_answer": "Predictable performance for large-scale workloads",
+        "explanation": "Dedicated SQL pools in Azure Synapse Analytics provide reserved compute resources, ensuring predictable performance for large-scale, complex data warehouse workloads, unlike serverless SQL pools which are better for ad-hoc queries."
+    },
+    {
+        "question": "In Azure Synapse Analytics, what is the role of a Spark pool?",
+        "options": [
+            "To execute SQL queries on relational data",
+            "To process big data using Apache Spark",
+            "To store unstructured data",
+            "To automate data pipelines"
+        ],
+        "correct_answer": "To process big data using Apache Spark",
+        "explanation": "Spark pools in Azure Synapse Analytics provide a managed Apache Spark environment for processing big data, supporting languages like Python, Scala, and SQL."
+    },
+    {
+        "question": "Which Azure service enables secure data transfer between on-premises systems and Azure?",
+        "options": [
+            "Azure Data Factory",
+            "Azure ExpressRoute",
+            "Azure VPN Gateway",
+            "Azure Data Box"
+        ],
+        "correct_answer": "Azure Data Factory",
+        "explanation": "Azure Data Factory supports secure data transfer between on-premises systems and Azure through connectors and integration runtimes, enabling hybrid data integration."
+    },
+    {
+        "question": "What is the purpose of a non-clustered index in a relational database?",
+        "options": [
+            "To physically order table data",
+            "To create a separate structure for faster queries",
+            "To enforce data integrity",
+            "To compress data for storage"
+        ],
+        "correct_answer": "To create a separate structure for faster queries",
+        "explanation": "A non-clustered index creates a separate data structure that improves query performance without altering the physical order of the table, allowing multiple per table."
+    }
+]
