@@ -53,5 +53,116 @@
       ],
       "correct_answer": "To maximize performance and scalability in distributed systems",
       "explanation": "NoSQL databases often prioritize scalability and performance by relaxing ACID guarantees, instead adopting BASE (Basically Available, Soft state, Eventually consistent) principles."
+    },
+
+    {
+        "question": "Which ACID property ensures that if a transaction fails, the database is returned to the state it was in before the transaction began?",
+        "options": [
+        "Atomicity",
+        "Consistency",
+        "Isolation",
+        "Durability"
+        ],
+        "correct_answer": "Atomicity",
+        "explanation": "Atomicity guarantees that all operations in a transaction are completed successfully or none are applied, ensuring rollback in case of failure."
+    },
+    {
+        "question": "Which ACID property is violated if two concurrent transactions interfere and produce an inconsistent final state?",
+        "options": [
+        "Atomicity",
+        "Consistency",
+        "Isolation",
+        "Durability"
+        ],
+        "correct_answer": "Isolation",
+        "explanation": "Isolation ensures that concurrent transactions do not interfere with each other, preventing issues like dirty reads or lost updates."
+    },
+    {
+        "question": "Which ACID property guarantees that once a transaction is committed, its results will persist even in case of a power failure?",
+        "options": [
+        "Atomicity",
+        "Consistency",
+        "Isolation",
+        "Durability"
+        ],
+        "correct_answer": "Durability",
+        "explanation": "Durability ensures that committed transactions are permanently recorded and will survive system crashes."
+    },
+    {
+        "question": "Which ACID property ensures that a database will not accept any transaction that violates defined rules, such as constraints or triggers?",
+        "options": [
+        "Atomicity",
+        "Consistency",
+        "Isolation",
+        "Durability"
+        ],
+        "correct_answer": "Consistency",
+        "explanation": "Consistency ensures that transactions only take the database from one valid state to another, preserving defined integrity constraints."
+    },
+    {
+        "question": "Which of the following best describes a situation where the Isolation property is fully enforced?",
+        "options": [
+        "Multiple users can update the same row at the same time to increase speed.",
+        "A transaction can read uncommitted data from another transaction.",
+        "One transaction must complete before another reads or writes to the same data.",
+        "A rollback does not affect other running transactions."
+        ],
+        "correct_answer": "One transaction must complete before another reads or writes to the same data.",
+        "explanation": "Isolation ensures that a transaction’s intermediate state is not visible to others, preventing concurrency-related issues like dirty reads."
+    },
+    {
+        "question": "Which of the following situations would indicate a violation of the Consistency property in a relational database?",
+        "options": [
+        "A transaction fails to update a secondary table after updating the primary table.",
+        "Two users read the same record at the same time.",
+        "A rollback occurs due to a syntax error in a query.",
+        "A read operation returns stale data due to index latency."
+        ],
+        "correct_answer": "A transaction fails to update a secondary table after updating the primary table.",
+        "explanation": "Consistency ensures that all integrity constraints are maintained. A partial update that violates referential or business rules would break this guarantee."
+    },
+    {
+        "question": "Which scenario best illustrates the need for Isolation in a transactional system?",
+        "options": [
+        "A transaction fails and triggers a rollback to the initial state.",
+        "Two transactions simultaneously withdraw money from the same account, leading to an incorrect balance.",
+        "A database is restored from backup after a system crash.",
+        "A constraint prevents insertion of a duplicate record."
+        ],
+        "correct_answer": "Two transactions simultaneously withdraw money from the same account, leading to an incorrect balance.",
+        "explanation": "Isolation prevents concurrent transactions from interfering with each other. Simultaneous withdrawals without proper isolation can result in data corruption."
+    },
+    {
+        "question": "Which database feature is commonly used to implement the Isolation property of ACID?",
+        "options": [
+        "Triggers",
+        "Foreign keys",
+        "Locks",
+        "Materialized views"
+        ],
+        "correct_answer": "Locks",
+        "explanation": "Locks are used to control access to data being modified, ensuring that transactions are isolated and do not interfere with each other."
+    },
+    {
+        "question": "In which scenario does the Durability property become critical?",
+        "options": [
+        "When multiple users attempt to read the same data.",
+        "When a system crashes after a transaction commits.",
+        "When a transaction is rolled back due to an error.",
+        "When queries are executed with low latency requirements."
+        ],
+        "correct_answer": "When a system crashes after a transaction commits.",
+        "explanation": "Durability ensures that once a transaction is committed, its effects persist permanently—even through power failures or crashes."
+    },
+    {
+        "question": "Which of the following best represents a complete ACID-compliant transaction?",
+        "options": [
+        "Read, transform, log, and store operations completed in separate sessions.",
+        "Insert and update operations within a single transaction that passes all integrity checks and commits successfully.",
+        "Concurrent transactions that all modify the same data for performance gains.",
+        "Partial updates followed by a commit when no error is raised."
+        ],
+        "correct_answer": "Insert and update operations within a single transaction that passes all integrity checks and commits successfully.",
+        "explanation": "A transaction that adheres to atomicity, consistency, isolation, and durability is one where all valid operations succeed, meet integrity rules, and persist reliably."
     }
 ]
